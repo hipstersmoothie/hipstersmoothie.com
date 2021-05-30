@@ -27,7 +27,6 @@ interface LeafProps {
 const Leaf = ({ source, title, leaves }: LeafProps) => {
   const [inIframeQueryParam] = useQueryParam("in-iframe", StringParam);
   const Component = useMemo(() => getMDXComponent(source), [source]);
-  const inIframe = inIframeQueryParam === "true";
 
   const content = <div
     className={makeClass(
@@ -37,7 +36,7 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
     <Component components={components} />
   </div>
 
-  if (inIframe) {
+  if (typeof window !== 'undefined' && window.frameElement) {
     return content
   }
 
@@ -47,7 +46,7 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
         <title>{title}</title>
       </Head>
 
-      <Header hidden={inIframe} active="garden" />
+      <Header active="garden" />
 
       {content}
 
