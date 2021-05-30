@@ -1,3 +1,5 @@
+#terminal #tools
+
 # Git Aliases
 
 I started as a Git GUI person (I still love and use [gitup](https://gitup.co/) daily) but as I've grown as a developer I moved more and more into my terminal.

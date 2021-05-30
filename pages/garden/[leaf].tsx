@@ -14,7 +14,7 @@ import { useQueryParam, StringParam } from "use-query-params";
 import { Header } from "../../components/Header";
 import { NoteSwitcher } from "../../components/NoteSwitcher";
 import { components } from "../../components/semantic";
-import { getLeaves, LeafObject } from "../../utils/leaves";
+import { getLeaves, getTags, LeafObject } from "../../utils/leaves";
 
 interface LeafProps {
   currentLeaf: LeafObject;
@@ -38,7 +38,7 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
 
       <div
         className={makeClass(
-          "px-4 md:px-10 pt-4 pb-16 max-w-[100ch] mx-auto",
+          "px-4 md:px-10 pt-8 pb-16 max-w-[100ch] mx-auto",
           inIframe ? "pt-0" : "pt-4"
         )}
       >
@@ -50,6 +50,32 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
   );
 };
 
+import visit from "unist-util-visit";
+
+const createTags = () => (tree: any) => {
+  const visitor = (node: any) => {
+    const { children } = node;
+
+    if (children.length >= 1 && typeof children[0].value === "string") {
+      const potentialTags = getTags(children[0].value as string);
+
+      if (potentialTags.length) {
+        node.type = "div";
+        node.tags = potentialTags;
+        node.children = potentialTags.map((tag) => ({
+          type: "mdxJsxFlowElement",
+          name: "Tag",
+          attributes: [],
+          children: [{ type: "text", value: tag }],
+          data: { _xdmExplicitJsx: true },
+        }));
+      }
+    }
+  };
+
+  visit(tree, "paragraph", visitor);
+};
+
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const filePath = path.join(process.cwd(), `pages/garden/${params.leaf}.md`);
   const content = await fs.readFile(filePath, "utf-8");
@@ -59,6 +85,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
         gfm,
+        createTags,
         [
           wikiLinkPlugin,
           {

@@ -12,6 +12,7 @@ interface DateProperties {
 export interface LeafObject extends DateProperties {
   file: string;
   path: string;
+  tags: string[];
   title: string;
 }
 
@@ -25,6 +26,17 @@ const getDate = async (filename: string): Promise<DateProperties> => {
   };
 };
 
+export const getTags = (str: string) => {
+  const TAG_REGEX = /^#(.*)$/;
+  const tags = str.split(" ");
+
+  if (tags.every((tag) => tag.match(TAG_REGEX))) {
+    return tags;
+  }
+
+  return [];
+};
+
 export const getLeaves = async () => {
   const paths = await fs.readdir(GARDEN_DIR);
   const markdown = paths.filter((p) => p.endsWith(".md"));
@@ -32,11 +44,14 @@ export const getLeaves = async () => {
   return Promise.all(
     markdown.map(async (file) => {
       const fullPath = path.join(GARDEN_DIR, file);
+      const content = await fs.readFile(fullPath, "utf-8");
+      const [firstLine] = content.split("\n");
 
       return {
         file,
         path: fullPath,
         title: file.replace(".md", ""),
+        tags: getTags(firstLine),
         ...(await getDate(fullPath)),
       };
     })

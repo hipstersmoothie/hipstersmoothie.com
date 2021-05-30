@@ -1,3 +1,5 @@
+#terminal #tools
+
 # Terminal Setup
 
 When I first started coding in college, one of the scariest pieces of technology to me was the terminal. Back then OSX shipped with bash and the default was just plain hard to look at, so I didn't.

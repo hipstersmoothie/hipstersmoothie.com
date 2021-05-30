@@ -16,7 +16,7 @@ export const Paragraph: React.FC = (props) => {
   return <p {...props} className="my-6" />;
 };
 
-export const Anchor = (props: React.ComponentProps<'a'>) => {
+export const Anchor = (props: React.ComponentProps<"a">) => {
   const hideTimeout = useRef<ReturnType<typeof setTimeout>>();
   const [showPopper, setShowPopper] = useState(false);
   const [referenceElement, setReferenceElement] =
@@ -126,9 +126,22 @@ export const HorizontalRule: React.FC = (props) => (
   <hr {...props} className="mx-auto h-2 w-8 rounded bg-gray-200 my-10" />
 );
 
-export const OrderedList: React.FC = (props) => <ol {...props} className="list-decimal ml-8 my-8" />
+export const OrderedList: React.FC = (props) => (
+  <ol {...props} className="list-decimal ml-8 my-8" />
+);
 
-export const UnorderedList: React.FC = (props) => <ul {...props} className="list-disc ml-8 my-8" />
+export const UnorderedList: React.FC = (props) => (
+  <ul {...props} className="list-disc ml-8 my-8" />
+);
+
+export const Tag = (props: React.ComponentProps<"div">) => {
+  return (
+    <div
+      {...props}
+      className="bg-pink-400 rounded-full inline-flex px-3 text-white font-semibold mr-2 last:mr-0"
+    />
+  );
+};
 
 export const components: ComponentMap = {
   p: Paragraph,
@@ -188,4 +201,5 @@ export const components: ComponentMap = {
     <th {...props} className="pb-4 px-3 text-left font-semibold" />
   ),
   td: (props) => <td {...props} className="py-2 px-3 border-b border-t" />,
+  Tag,
 };

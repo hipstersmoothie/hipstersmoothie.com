@@ -9,7 +9,7 @@ import {
   HorizontalRule,
   Paragraph,
   UnorderedList,
-  Anchor
+  Anchor,
 } from "../components/semantic";
 import { getLeaves, LeafObject } from "../utils/leaves";
 
@@ -55,12 +55,26 @@ export default function Garden({ leaves = [] }: GardenProps) {
         <div className="max-w-4xl mx-auto px-6">
           <div className="max-w-xl mx-auto mb-10">
             <p>
-              You can navigate through the notes in my Digital Garden in two ways:
+              You can navigate through the notes in my Digital Garden in two
+              ways:
             </p>
 
             <UnorderedList>
-              <li>Click on the <Anchor href="/garden/Terminal Setup">special pink links</Anchor> each each note. These links only link to other notes in my Digital Garden.</li>
-              <li>Use the Note Switcher <span className="bg-pink-300 text-pink-900 text-sm px-2 py-[0.125rem] rounded">CMD+K</span> to search through the garden</li>
+              <li>
+                Click on the{" "}
+                <Anchor href="/garden/Terminal Setup">
+                  special pink links
+                </Anchor>{" "}
+                each each note. These links only link to other notes in my
+                Digital Garden.
+              </li>
+              <li>
+                Use the Note Switcher{" "}
+                <span className="bg-pink-300 text-pink-900 text-sm px-2 py-[0.125rem] rounded">
+                  CMD+K
+                </span>{" "}
+                to search through the garden
+              </li>
             </UnorderedList>
           </div>
           <div className="grid items-baseline gap-4 sm:grid-cols-2 md:grid-cols-4">

@@ -4,8 +4,24 @@ import CommandPalette from "react-command-palette";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { LeafObject } from "../utils/leaves";
 
+function Note({ title, tags }: LeafObject) {
+  return (
+    <div className="flex justify-between space-x-2">
+      <div>{title}</div>
+
+      {tags?.length > 0 && (
+        <div className="flex space-x-2 items-baseline pt-[1px]">
+          {tags.map((tag) => (
+            <div className="text-[.6rem] md:text-xs rounded bg-pink-400 text-white px-1 py-[0.125rem]">{tag}</div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 interface NoteSwitcherProps {
-  leaves: LeafObject[]
+  leaves: LeafObject[];
 }
 
 export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
@@ -28,8 +44,10 @@ export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
         onAfterOpen={() => disableBodyScroll(paletteWrapper.current)}
         onRequestClose={() => enableBodyScroll(paletteWrapper.current)}
         onSelect={() => enableBodyScroll(paletteWrapper.current)}
+        renderCommand={Note}
         commands={leaves.map((leaf) => {
           return {
+            ...leaf,
             name: leaf.title,
             command: () => router.push(`/garden/${leaf.title}`),
           };
