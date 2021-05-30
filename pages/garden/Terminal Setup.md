@@ -10,7 +10,6 @@ Over the years I've played around with a bunch of different terminal setups and 
 
 ## Terminal App
 
-
 The default terminal for OSX is okay but I always install [iterm](https://www.iterm2.com/) for all it's great features.
 
 ### iTerm settings
@@ -205,5 +204,3 @@ To fix this you can set up custom keyboard shortcuts in iTerm. Go to `Preference
 | `alt + right`     | Cursor skip one word right | `0x1b 0x66` |
 | `alt + left`      | Cursor skip one word left  | `0x1b 0x62` |
 | `alt + backspace` | Delete one word            | `0x1b 0x08` |
-
-

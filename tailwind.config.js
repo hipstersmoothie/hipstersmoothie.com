@@ -1,9 +1,9 @@
 module.exports = {
-  mode: 'jit',
-  darkMode: 'media', 
+  mode: "jit",
+  darkMode: "media",
   purge: [
-    './pages/**/*.{js,jsx,ts,tsx,vue}',
-    './components/**/*.{js,jsx,ts,tsx,vue}',
+    "./pages/**/*.{js,jsx,ts,tsx,vue}",
+    "./components/**/*.{js,jsx,ts,tsx,vue}",
   ],
   theme: {
     extend: {},
@@ -12,4 +12,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};

@@ -1,10 +1,10 @@
-import { memo, useMemo } from 'react'
-import { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
+import { memo, useMemo } from "react";
+import { AppProps } from "next/app";
+import { useRouter } from "next/router";
 import { QueryParamProvider as ContextProvider } from "use-query-params";
 
-import 'tailwindcss/tailwind.css'
-import '../styles/globals.css'
+import "tailwindcss/tailwind.css";
+import "../styles/globals.css";
 
 const QueryParamProviderComponent = (props: { children?: React.ReactNode }) => {
   const { children, ...rest } = props;
@@ -17,8 +17,8 @@ const QueryParamProviderComponent = (props: { children?: React.ReactNode }) => {
       typeof window !== "undefined"
         ? window.location
         : ({
-          search: router.asPath.replace(/[^?]+/u, ""),
-        } as Location),
+            search: router.asPath.replace(/[^?]+/u, ""),
+          } as Location),
     [router.asPath]
   );
 
@@ -51,9 +51,12 @@ const QueryParamProviderComponent = (props: { children?: React.ReactNode }) => {
 
 const QueryParamProvider = memo(QueryParamProviderComponent);
 
-
 function MyApp({ Component, pageProps }: AppProps) {
-  return <QueryParamProvider><Component {...pageProps} /></QueryParamProvider>
+  return (
+    <QueryParamProvider>
+      <Component {...pageProps} />
+    </QueryParamProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

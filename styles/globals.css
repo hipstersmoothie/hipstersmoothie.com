@@ -43,16 +43,6 @@ a {
   display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  .syntax-light {
-    display: none;
-  }
-
-  .syntax-dark {
-    display: block;
-  }
-}
-
 .command-modal {
   max-height: calc(90vh - 10%);
 }
