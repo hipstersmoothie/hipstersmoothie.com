@@ -28,6 +28,8 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
   const Component = useMemo(() => getMDXComponent(source), [source]);
   const inIframe = inIframeQueryParam === "true";
 
+  console.log({inIframe})
+
   return (
     <div>
       <Head>
