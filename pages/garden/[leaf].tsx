@@ -36,7 +36,7 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
         <title>{title}</title>
       </Head>
 
-      {!inIframe && <Header active="garden" />}
+      {inIframe ? 'foo here' : <Header active="garden" />}
 
       <div
         className={makeClass(
