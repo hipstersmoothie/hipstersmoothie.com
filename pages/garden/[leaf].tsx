@@ -38,7 +38,7 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
 
       {inIframe ? 'foo here' : <Header active="garden" />}
 
-      <div
+      {/* <div
         className={makeClass(
           "px-4 md:px-10 pb-16 pt-8 max-w-[100ch] mx-auto",
         )}
@@ -46,7 +46,7 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
         <Component components={components} />
       </div>
 
-      <NoteSwitcher leaves={leaves} />
+      <NoteSwitcher leaves={leaves} /> */}
     </div>
   );
 };
