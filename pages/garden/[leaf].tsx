@@ -1,6 +1,6 @@
 import path from "path";
 import Head from "next/head";
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef, useMemo, useLayoutEffect } from "react";
 import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPropsContext } from "next";
@@ -27,32 +27,21 @@ const Leaf = ({ source, title, leaves, backLinks }: LeafProps) => {
   const ref = useRef(null);
   const Component = useMemo(() => getMDXComponent(source), [source]);
   const isIframe = typeof window !== "undefined" && window.frameElement;
-  const markdownContent = (
-    <>
-      <Component components={components} />
+  const markdownContent = <Component components={components} />;
+  const effect = typeof window === 'undefined' ? useEffect : useLayoutEffect
 
-      {backLinks.length > 0 && (
-        <>
-          <HorizontalRule />
-          <h2 className="font-black text-xl mb-4">Back Links</h2>
-          <div>
-            {backLinks.map((link) => (
-              <Anchor href={`/garden/${link}`}>{link}</Anchor>
-            ))}
-          </div>
-        </>
-      )}
-    </>
-  );
-
-  useEffect(() => {
+  effect(() => {
     if (window.top != window.self && ref.current) {
-      ref.current.className = 'px-3 py-2'
+      ref.current.className = "px-3 py-2";
     }
-  }, [])
+  }, []);
 
   if (isIframe) {
-    return <div ref={ref} id="iframe-preview">{markdownContent}</div>;
+    return (
+      <div ref={ref} id="iframe-preview">
+        {markdownContent}
+      </div>
+    );
   }
 
   return (
@@ -65,6 +54,18 @@ const Leaf = ({ source, title, leaves, backLinks }: LeafProps) => {
 
       <div className="px-4 md:px-10 pb-16 pt-2 md:pt-8 max-w-[100ch] mx-auto">
         {markdownContent}
+
+        {backLinks.length > 0 && (
+          <>
+            <HorizontalRule />
+            <h2 className="font-black text-xl mb-4">Back Links</h2>
+            <div>
+              {backLinks.map((link) => (
+                <Anchor href={`/garden/${link}`}>{link}</Anchor>
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
       <NoteSwitcher leaves={leaves} />

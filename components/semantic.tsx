@@ -19,7 +19,16 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
   const [referenceElement, setReferenceElement] =
     useState<HTMLAnchorElement>(null);
   const [popperElement, setPopperElement] = useState(null);
-  const { styles, attributes } = usePopper(referenceElement, popperElement);
+  const { styles, attributes } = usePopper(referenceElement, popperElement, {
+    modifiers: [
+      {
+        name: "preventOverflow",
+        options: {
+          padding: 10,
+        },
+      },
+    ],
+  });
   const isBackLink = props.href.startsWith("/garden");
 
   useEffect(() => {
