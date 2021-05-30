@@ -10,6 +10,7 @@ Over the years I've played around with a bunch of different terminal setups and 
 
 ## Terminal App
 
+
 The default terminal for OSX is okay but I always install [iterm](https://www.iterm2.com/) for all it's great features.
 
 ### iTerm settings
