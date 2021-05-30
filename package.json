@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn create-backlink-map && next build",
     "start": "next start",
     "create-backlink-map": "node -r esbuild-register scripts/create-backlink-map.ts"
   },
