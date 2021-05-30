@@ -29,7 +29,17 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
   const Component = useMemo(() => getMDXComponent(source), [source]);
   const inIframe = inIframeQueryParam === "true";
 
-  console.log({ inIframe })
+  const content = <div
+    className={makeClass(
+      "px-4 md:px-10 pb-16 pt-8 max-w-[100ch] mx-auto",
+    )}
+  >
+    <Component components={components} />
+  </div>
+
+  if (inIframe) {
+    return content
+  }
 
   return (
     <div>
@@ -39,13 +49,7 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
 
       <Header hidden={inIframe} active="garden" />
 
-      <div
-        className={makeClass(
-          "px-4 md:px-10 pb-16 pt-8 max-w-[100ch] mx-auto",
-        )}
-      >
-        <Component components={components} />
-      </div>
+      {content}
 
       <NoteSwitcher leaves={leaves} />
     </div>
@@ -79,13 +83,13 @@ const createTags = () => (tree: any) => {
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const filePath = path.join(process.cwd(), `pages/garden/${params.leaf}.md`);
   const content = await fs.readFile(filePath, "utf-8");
-  console.log(createTags)
   const { code } = await bundleMDX(content, {
     files: {},
     xdmOptions(options) {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
         gfm,
+        createTags,
         [
           wikiLinkPlugin,
           {
