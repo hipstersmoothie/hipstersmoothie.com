@@ -6,11 +6,7 @@ import { usePopper } from "react-popper";
 import { useQueryParam, StringParam } from "use-query-params";
 
 export const Paragraph: React.FC = (props) => {
-  if (
-    typeof props.children === "object" &&
-    "type" in props.children &&
-    props.children.type === "img"
-  ) {
+  if (typeof props.children === "object" && "type" in props.children) {
     return <>{props.children}</>;
   }
 

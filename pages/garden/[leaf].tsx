@@ -9,7 +9,6 @@ import { promises as fs } from "fs";
 import { wikiLinkPlugin } from "remark-wiki-link";
 import gfm from "remark-gfm";
 import shiki from "rehype-shiki-reloaded";
-import { useQueryParam, StringParam } from "use-query-params";
 import visit from "unist-util-visit";
 
 import { Header } from "../../components/Header";
@@ -25,30 +24,29 @@ interface LeafProps {
 }
 
 const Leaf = ({ source, title, leaves }: LeafProps) => {
-  const [inIframeQueryParam] = useQueryParam("in-iframe", StringParam);
   const Component = useMemo(() => getMDXComponent(source), [source]);
+  const isIframe = typeof window !== "undefined" && window.frameElement;
+  const markdownContent = <Component components={components} />;
 
-  const content = <div
-    className={makeClass(
-      "px-4 md:px-10 pb-16 pt-8 max-w-[100ch] mx-auto",
-    )}
-  >
-    <Component components={components} />
-  </div>
-
-  if (typeof window !== 'undefined' && window.frameElement) {
-    return content
+  if (isIframe) {
+    return (
+      <div id="iframe-preview">
+        {markdownContent}
+      </div>
+    );
   }
 
   return (
-    <div>
+    <div id='iframe-preview'>
       <Head>
         <title>{title}</title>
       </Head>
 
       <Header active="garden" />
 
-      {content}
+      <div className="x-4 md:px-10 pb-16 pt-8 max-w-[100ch] mx-auto">
+        <Component components={components} />
+      </div>
 
       <NoteSwitcher leaves={leaves} />
     </div>
@@ -63,8 +61,6 @@ const createTags = () => (tree: any) => {
       const potentialTags = getTags(children[0].value as string);
 
       if (potentialTags.length) {
-        node.type = "div";
-        node.tags = potentialTags;
         node.children = potentialTags.map((tag) => ({
           type: "mdxJsxFlowElement",
           name: "Tag",

@@ -13,7 +13,9 @@ function Note({ title, tags }: LeafObject) {
       {tags?.length > 0 && (
         <div className="flex space-x-2 items-baseline pt-[1px]">
           {tags.map((tag) => (
-            <div className="text-[.6rem] md:text-xs rounded bg-pink-400 text-white px-1 py-[0.125rem]">{tag}</div>
+            <div className="text-[.6rem] md:text-xs rounded bg-pink-400 text-white px-1 py-[0.125rem]">
+              {tag}
+            </div>
           ))}
         </div>
       )}
@@ -31,27 +33,37 @@ export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
   const [search, setSearch] = useQueryParam("search", StringParam);
 
   const onClose = () => {
-    enableBodyScroll(paletteWrapper.current)
-    setSearch(undefined)
-  }
+    enableBodyScroll(paletteWrapper.current);
+    setSearch(undefined);
+  };
 
   if (typeof window === "undefined") {
-    return null;
+    return <div />;
   }
 
   return (
-    <div ref={paletteWrapper}>
+    <div>
       <CommandPalette
         closeOnSelect
         resetInputOnOpen
         open={search}
         defaultInputValue={search}
         options={{
-          keys: ["name", "tags.0", "tags.1", "tags.2", "tags.3", "tags.4", "tags.5", "tags.6", "tags.7"], 
-          threshold: 0, 
+          keys: [
+            "name",
+            "tags.0",
+            "tags.1",
+            "tags.2",
+            "tags.3",
+            "tags.4",
+            "tags.5",
+            "tags.6",
+            "tags.7",
+          ],
+          threshold: 0,
           limit: Infinity,
-          allowTypo: true, 
-          scoreFn: null 
+          allowTypo: true,
+          scoreFn: null,
         }}
         highlightFirstSuggestion={false}
         header={<div className="text-xl mt-2 mb-4 mx-1">Note Switcher</div>}

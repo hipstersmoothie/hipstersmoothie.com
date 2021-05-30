@@ -50,3 +50,7 @@ a {
 .command-list {
   max-height: min(50vh, 900px);
 }
+
+#iframe-preview {
+  @apply px-4 py-2;
+}

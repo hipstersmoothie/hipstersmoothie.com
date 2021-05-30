@@ -79,7 +79,11 @@ export default function Garden({ leaves = [] }: GardenProps) {
           </div>
           <div className="grid items-baseline gap-4 sm:grid-cols-2 md:grid-cols-4">
             {leaves.map((leaf) => (
-              <Link passHref href={`/garden/${leaf.title}`}>
+              <Link
+                passHref
+                href={`/garden/${leaf.title}`}
+                key={`/garden/${leaf.title}`}
+              >
                 <a className="border rounded-lg px-6 py-5 shadow-none transition-shadow hover:shadow-lg hover:border-pink-400 active:shadow">
                   <h2 className="text-lg mb-2">{leaf.title}</h2>
                   <time
