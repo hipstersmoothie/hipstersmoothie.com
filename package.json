@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "create-backlink-map": "node -r esbuild-register scripts/create-backlink-map.ts"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
@@ -13,12 +14,14 @@
     "clsx": "^1.1.1",
     "date-fns": "^2.22.1",
     "execa": "^5.0.1",
+    "fast-glob": "^3.2.5",
     "mdx-bundler": "^4.0.0",
     "next": "10.2.3",
     "query-string": "^7.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-popper": "^2.2.5",
+    "rehype-stringify": "^8.0.0",
     "remark-wiki-link": "^1.0.2",
     "use-query-params": "^1.2.2"
   },
@@ -26,6 +29,7 @@
     "@types/body-scroll-lock": "^2.6.1",
     "@types/react": "^17.0.8",
     "autoprefixer": "^10.2.6",
+    "esbuild-register": "^2.5.0",
     "postcss": "^8.3.0",
     "prettier": "^2.3.0",
     "react-command-palette": "^0.16.2",

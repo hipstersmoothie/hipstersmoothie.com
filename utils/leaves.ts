@@ -2,7 +2,7 @@ import path from "path";
 import { promises as fs } from "fs";
 import execa from "execa";
 
-const GARDEN_DIR = path.join(process.cwd(), `pages/garden`);
+export const GARDEN_DIR = path.join(process.cwd(), `pages/garden`);
 
 interface DateProperties {
   lastUpdatedDate: string;

@@ -1,7 +1,6 @@
 import path from "path";
-import makeClass from "clsx";
 import Head from "next/head";
-import { useMemo } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPropsContext } from "next";
@@ -13,39 +12,59 @@ import visit from "unist-util-visit";
 
 import { Header } from "../../components/Header";
 import { NoteSwitcher } from "../../components/NoteSwitcher";
-import { components } from "../../components/semantic";
-import { getLeaves, getTags, LeafObject } from "../../utils/leaves";
+import { components, Anchor, HorizontalRule } from "../../components/semantic";
+import { GARDEN_DIR, getLeaves, getTags, LeafObject } from "../../utils/leaves";
 
 interface LeafProps {
   currentLeaf: LeafObject;
   source: string;
   title: string;
   leaves: LeafObject[];
+  backLinks: string[];
 }
 
-const Leaf = ({ source, title, leaves }: LeafProps) => {
+const Leaf = ({ source, title, leaves, backLinks }: LeafProps) => {
+  const ref = useRef(null);
   const Component = useMemo(() => getMDXComponent(source), [source]);
   const isIframe = typeof window !== "undefined" && window.frameElement;
-  const markdownContent = <Component components={components} />;
+  const markdownContent = (
+    <>
+      <Component components={components} />
+
+      {backLinks.length > 0 && (
+        <>
+          <HorizontalRule />
+          <h2 className="font-black text-xl mb-4">Back Links</h2>
+          <div>
+            {backLinks.map((link) => (
+              <Anchor href={`/garden/${link}`}>{link}</Anchor>
+            ))}
+          </div>
+        </>
+      )}
+    </>
+  );
+
+  useEffect(() => {
+    if (window.top != window.self && ref.current) {
+      ref.current.className = 'px-3 py-2'
+    }
+  }, [])
 
   if (isIframe) {
-    return (
-      <div id="iframe-preview">
-        {markdownContent}
-      </div>
-    );
+    return <div ref={ref} id="iframe-preview">{markdownContent}</div>;
   }
 
   return (
-    <div id='iframe-preview'>
+    <div id="iframe-preview">
       <Head>
         <title>{title}</title>
       </Head>
 
       <Header active="garden" />
 
-      <div className="x-4 md:px-10 pb-16 pt-8 max-w-[100ch] mx-auto">
-        <Component components={components} />
+      <div className="px-4 md:px-10 pb-16 pt-2 md:pt-8 max-w-[100ch] mx-auto">
+        {markdownContent}
       </div>
 
       <NoteSwitcher leaves={leaves} />
@@ -76,7 +95,10 @@ const createTags = () => (tree: any) => {
 };
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
-  const filePath = path.join(process.cwd(), `pages/garden/${params.leaf}.md`);
+  const backLinks = JSON.parse(
+    await fs.readFile(path.join(GARDEN_DIR, "back-links.json"), "utf-8")
+  );
+  const filePath = path.join(GARDEN_DIR, `${params.leaf}.md`);
   const content = await fs.readFile(filePath, "utf-8");
   const { code } = await bundleMDX(content, {
     files: {},
@@ -107,6 +129,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
       title: params.leaf,
       source: code,
       leaves: await getLeaves(),
+      backLinks: backLinks[params.leaf as string] || [],
     },
   };
 };
