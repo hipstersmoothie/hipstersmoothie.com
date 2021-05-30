@@ -79,13 +79,13 @@ const createTags = () => (tree: any) => {
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const filePath = path.join(process.cwd(), `pages/garden/${params.leaf}.md`);
   const content = await fs.readFile(filePath, "utf-8");
+  console.log(createTags)
   const { code } = await bundleMDX(content, {
     files: {},
     xdmOptions(options) {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
         gfm,
-        // createTags,
         [
           wikiLinkPlugin,
           {
