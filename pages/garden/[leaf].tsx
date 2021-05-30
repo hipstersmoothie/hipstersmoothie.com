@@ -10,6 +10,7 @@ import { wikiLinkPlugin } from "remark-wiki-link";
 import gfm from "remark-gfm";
 import shiki from "rehype-shiki-reloaded";
 import { useQueryParam, StringParam } from "use-query-params";
+import visit from "unist-util-visit";
 
 import { Header } from "../../components/Header";
 import { NoteSwitcher } from "../../components/NoteSwitcher";
@@ -28,7 +29,7 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
   const Component = useMemo(() => getMDXComponent(source), [source]);
   const inIframe = inIframeQueryParam === "true";
 
-  console.log({inIframe})
+  console.log({ inIframe })
 
   return (
     <div>
@@ -50,8 +51,6 @@ const Leaf = ({ source, title, leaves }: LeafProps) => {
     </div>
   );
 };
-
-import visit from "unist-util-visit";
 
 const createTags = () => (tree: any) => {
   const visitor = (node: any) => {
@@ -86,7 +85,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
         gfm,
-        createTags,
+        // createTags,
         [
           wikiLinkPlugin,
           {
