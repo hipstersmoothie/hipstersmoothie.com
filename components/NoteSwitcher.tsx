@@ -68,8 +68,8 @@ export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
             command: () => router.push(`/garden/${leaf.title}`),
           };
         })}
+        trigger={null}
         theme={{
-          trigger: "hidden",
           modal:
             "command-modal absolute bg-white w-[90vw] md:w-[605px] top-[10%] left-1/2 p-6 rounded-lg transform -translate-x-2/4 shadow-lg",
           overlay: "atom-overlay",
