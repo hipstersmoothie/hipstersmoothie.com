@@ -50,7 +50,3 @@ a {
 .command-list {
   max-height: min(50vh, 900px);
 }
-
-.react-command-palette {
-  display: none;
-}
