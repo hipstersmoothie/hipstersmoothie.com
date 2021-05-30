@@ -1,7 +1,7 @@
 import path from 'path'
 import makeClass from 'clsx';
 import Head from 'next/head'
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from 'next/router';
 import { bundleMDX } from 'mdx-bundler'
 import { ComponentMap, getMDXComponent } from 'mdx-bundler/client'
@@ -12,6 +12,8 @@ import gfm from 'remark-gfm'
 import shiki from "rehype-shiki-reloaded";
 import CommandPalette from 'react-command-palette';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { usePopper } from 'react-popper';
+import { useQueryParam, BooleanParam, StringParam } from "use-query-params";
 
 import { Header } from '../../components/Header'
 
@@ -23,9 +25,64 @@ const Paragraph: React.FC = props => {
   return <p {...props} className="my-6" />
 }
 
+const Anchor: React.FC = (props) => {
+  const hideTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const [showPopper, setShowPopper] = useState(false);
+  const [referenceElement, setReferenceElement] = useState<HTMLAnchorElement>(null);
+  const [popperElement, setPopperElement] = useState(null);
+  const { styles, attributes, } = usePopper(referenceElement, popperElement);
+  const isBackLink = (props as any).href.startsWith('/garden');
+
+  useEffect(() => {
+    const hidePopper = () => setShowPopper(false);
+    document.addEventListener('click', hidePopper)
+
+    return () => {
+      document.removeEventListener('click', hidePopper)
+    }
+  }, [])
+
+  if (isBackLink) {
+    const hidePopperDelayed = () => {
+      hideTimeout.current = setTimeout(() => setShowPopper(false), 500)
+    }
+
+    return (
+      <>
+        <a
+          {...props}
+          className="underline text-pink-500"
+          ref={setReferenceElement}
+          onMouseEnter={() => {
+            clearTimeout(hideTimeout.current)
+            setShowPopper(true);
+          }}
+          onMouseOut={hidePopperDelayed}
+        />
+
+        {showPopper && (
+          <iframe
+            ref={setPopperElement}
+            style={styles.popper}
+            onMouseOver={() => clearTimeout(hideTimeout.current)}
+            onMouseOut={hidePopperDelayed}
+            className="bg-white border rounded-xl w-[400px] h-[400px] shadow-xl"
+            {...attributes.popper}
+            src={`${window.location.origin}/garden/${props.children}?in-iframe=true`}
+          />
+        )}
+      </>
+    )
+  }
+
+  return (
+    <a {...props} className="underline text-blue-500" />
+  )
+}
+
 const components: ComponentMap = {
   p: Paragraph,
-  a: (props) => <a {...props} className="underline text-blue-500" />,
+  a: Anchor,
   img: (props) => (
     <div className="my-12">
       <img {...props} className="rounded-xl mx-auto w-full md:w-9/12" />
@@ -65,9 +122,11 @@ interface LeafProps {
 }
 
 const Leaf = ({ source, title, leafs }: LeafProps) => {
+  const [inIframeQueryParam] = useQueryParam("in-iframe", StringParam);
   const paletteWrapper = useRef<HTMLDivElement>(null)
   const Component = useMemo(() => getMDXComponent(source), [source])
   const router = useRouter();
+  const inIframe = inIframeQueryParam === 'true';
 
   return (
     <div>
@@ -75,9 +134,11 @@ const Leaf = ({ source, title, leafs }: LeafProps) => {
         <title>{title}</title>
       </Head>
 
-      <Header active="garden" />
+      {!inIframe && <Header active="garden" />}
 
-      <div className="px-4 pt-4 pb-16 max-w-[100ch] mx-auto">
+      <div className={
+        makeClass("px-4 pt-4 pb-16 max-w-[100ch] mx-auto", inIframe ? 'pt-0' : 'pt-4')
+      }>
         <Component components={components} />
 
         {typeof window !== 'undefined' && (
