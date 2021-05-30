@@ -27,6 +27,13 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
           padding: 10,
         },
       },
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 8],
+        },
+      },
+  
     ],
   });
   const isBackLink = props.href.startsWith("/garden");
