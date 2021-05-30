@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import CommandPalette from "react-command-palette";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { LeafObject } from "../utils/leaves";
+import { useQueryParam, StringParam } from "use-query-params";
 
 function Note({ title, tags }: LeafObject) {
   return (
@@ -27,6 +28,12 @@ interface NoteSwitcherProps {
 export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
   const paletteWrapper = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const [search, setSearch] = useQueryParam("search", StringParam);
+
+  const onClose = () => {
+    enableBodyScroll(paletteWrapper.current)
+    setSearch(undefined)
+  }
 
   if (typeof window === "undefined") {
     return null;
@@ -37,13 +44,22 @@ export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
       <CommandPalette
         closeOnSelect
         resetInputOnOpen
+        open={search}
+        defaultInputValue={search}
+        options={{
+          keys: ["name", "tags.0", "tags.1", "tags.2", "tags.3", "tags.4", "tags.5", "tags.6", "tags.7"], 
+          threshold: 0, 
+          limit: Infinity,
+          allowTypo: true, 
+          scoreFn: null 
+        }}
         highlightFirstSuggestion={false}
         header={<div className="text-xl mt-2 mb-4 mx-1">Note Switcher</div>}
         placeholder="Type the name of a note"
         hotKeys="command+k"
         onAfterOpen={() => disableBodyScroll(paletteWrapper.current)}
-        onRequestClose={() => enableBodyScroll(paletteWrapper.current)}
-        onSelect={() => enableBodyScroll(paletteWrapper.current)}
+        onRequestClose={onClose}
+        onSelect={onClose}
         renderCommand={Note}
         commands={leaves.map((leaf) => {
           return {

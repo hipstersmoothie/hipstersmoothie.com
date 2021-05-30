@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ComponentMap } from "mdx-bundler/client";
 import { usePopper } from "react-popper";
+import { useQueryParam, StringParam } from "use-query-params";
 
 export const Paragraph: React.FC = (props) => {
   if (
@@ -134,11 +135,14 @@ export const UnorderedList: React.FC = (props) => (
   <ul {...props} className="list-disc ml-8 my-8" />
 );
 
-export const Tag = (props: React.ComponentProps<"div">) => {
+export const Tag = (props: React.ComponentProps<"button">) => {
+  const [_, setSearch] = useQueryParam("search", StringParam);
+
   return (
-    <div
+    <button
       {...props}
       className="bg-pink-400 rounded-full inline-flex px-3 text-white font-semibold mr-2 last:mr-0"
+      onClick={() => setSearch(props.children as string)}
     />
   );
 };
