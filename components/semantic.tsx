@@ -4,10 +4,10 @@ import Link from "next/link";
 import { ComponentMap } from "mdx-bundler/client";
 import { usePopper } from "react-popper";
 import { useQueryParam, StringParam } from "use-query-params";
-import format from "date-fns/format";
 
 import { Time } from "./Time";
 import { LeafContext } from "../pages/garden/[leaf]";
+import { IframeContext } from "./IframeContext";
 
 export const Paragraph: React.FC = (props) => {
   if (typeof props.children === "object" && "type" in props.children) {
@@ -18,6 +18,7 @@ export const Paragraph: React.FC = (props) => {
 };
 
 export const Anchor = (props: React.ComponentProps<"a">) => {
+  const { inIframe } = useContext(IframeContext);
   const showTimeout = useRef<ReturnType<typeof setTimeout>>();
   const hideTimeout = useRef<ReturnType<typeof setTimeout>>();
   const [showPopper, setShowPopper] = useState(false);
@@ -77,7 +78,7 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
           />
         </Link>
 
-        {showPopper && (
+        {showPopper && !inIframe && (
           <iframe
             ref={setPopperElement}
             style={styles.popper}

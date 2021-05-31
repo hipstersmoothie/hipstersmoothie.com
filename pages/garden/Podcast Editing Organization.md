@@ -1,6 +1,8 @@
+#podcast
+
 # Podcast Editing Organization
 
-There are many ways to orgainze your project's compositions in [Descript](https://www.descript.com/). This is the structure I use to edit and produce content from my podcast [devtools.fm](https://devtools.fm).
+There are many ways to orgainze your project's compositions in [Descript](https://www.descript.com/). This is the structure I use to edit and produce content from my podcast [[devtools.fm]].
 
 ## The Multi-Track Sequence
 

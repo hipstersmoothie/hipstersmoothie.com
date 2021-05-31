@@ -12,6 +12,7 @@ import visit from "unist-util-visit";
 
 import { Header } from "../../components/Header";
 import { NoteSwitcher } from "../../components/NoteSwitcher";
+import { IframeContext } from "../../components/IframeContext";
 import { components, Anchor, HorizontalRule } from "../../components/semantic";
 import { GARDEN_DIR, getLeaves, getTags, LeafObject } from "../../utils/leaves";
 
@@ -34,37 +35,39 @@ interface LeafProps {
 const Leaf = ({ source, title, leaves, backLinks, currentLeaf }: LeafProps) => {
   const Component = useMemo(() => getMDXComponent(source), [source]);
   const markdownContent = <Component components={components} />;
-  const isIframe =
+  const inIframe =
     typeof window === "undefined" ? false : window.top != window.self;
 
   return (
-    <LeafContext.Provider value={{ currentLeaf }}>
-      <div id="iframe-preview">
-        <Head>
-          <title>{title}</title>
-        </Head>
+    <IframeContext.Provider value={{ inIframe }}>
+      <LeafContext.Provider value={{ currentLeaf }}>
+        <div id="iframe-preview">
+          <Head>
+            <title>{title}</title>
+          </Head>
 
-        <Header active="garden" />
+          <Header active="garden" />
 
-        <div className="px-4 md:px-10 pb-16 pt-2 md:pt-8 max-w-[100ch] mx-auto">
-          {markdownContent}
+          <div className="px-4 md:px-10 pb-16 pt-2 md:pt-8 max-w-[100ch] mx-auto">
+            {markdownContent}
 
-          {backLinks.length > 0 && (
-            <div className="back-links">
-              <HorizontalRule />
-              <h2 className="font-black text-xl mb-4">Back Links</h2>
-              <div>
-                {backLinks.map((link) => (
-                  <Anchor href={`/garden/${link}`}>{link}</Anchor>
-                ))}
+            {backLinks.length > 0 && (
+              <div className="back-links">
+                <HorizontalRule />
+                <h2 className="font-black text-xl mb-4">Back Links</h2>
+                <div>
+                  {backLinks.map((link) => (
+                    <Anchor href={`/garden/${link}`}>{link}</Anchor>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
 
-        {!isIframe && <NoteSwitcher leaves={leaves} />}
-      </div>
-    </LeafContext.Provider>
+          {!inIframe && <NoteSwitcher leaves={leaves} />}
+        </div>
+      </LeafContext.Provider>
+    </IframeContext.Provider>
   );
 };
 
