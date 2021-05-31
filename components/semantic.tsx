@@ -1,9 +1,11 @@
 import makeClass from "clsx";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ComponentMap } from "mdx-bundler/client";
 import { usePopper } from "react-popper";
 import { useQueryParam, StringParam } from "use-query-params";
+import format from "date-fns/format";
+import { LeafContext } from "../pages/garden/[leaf]";
 
 export const Paragraph: React.FC = (props) => {
   if (typeof props.children === "object" && "type" in props.children) {
@@ -28,12 +30,11 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
         },
       },
       {
-        name: 'offset',
+        name: "offset",
         options: {
           offset: [0, 8],
         },
       },
-  
     ],
   });
   const isBackLink = props.href.startsWith("/garden");
@@ -159,6 +160,32 @@ export const Tag = (props: React.ComponentProps<"button">) => {
   );
 };
 
+export const H1 = (props: React.ComponentProps<'h1'>) => {
+  const { currentLeaf } = useContext(LeafContext)
+
+  return <>
+    <h1
+      {...props}
+      className="lvl1 text-4xl md:text-6xl mt-6 md:mt-8 pb-4 md:pb-6 mb-4 md:mb-6 border-b"
+    />
+    <div className="space-x-4 text-sm flex mb-8">
+      <div className="text-gray-500">
+        <span className="italic">Created:{" "}</span>
+        <time dateTime={currentLeaf.creationDate} className="text-gray-900 font-medium">
+          {format(new Date(currentLeaf.creationDate), "MMM dd, yyyy")}
+        </time>
+      </div>
+
+      <div className="text-gray-500">
+        <span className="italic">Last updated:{" "}</span>
+        <time dateTime={currentLeaf.lastUpdatedDate} className="text-gray-900 font-medium">
+          {format(new Date(currentLeaf.lastUpdatedDate), "MMM dd, yyyy")}
+        </time>
+      </div>
+    </div>
+  </>
+}
+
 export const components: ComponentMap = {
   p: Paragraph,
   a: Anchor,
@@ -201,7 +228,7 @@ export const components: ComponentMap = {
       />
     );
   },
-  h1: (props) => <h1 {...props} className="lvl1 text-4xl mt-6 mb-8" />,
+  h1: H1,
   h2: (props) => (
     <h2
       {...props}
