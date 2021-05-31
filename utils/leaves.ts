@@ -1,6 +1,7 @@
 import path from "path";
 import { promises as fs } from "fs";
 import execa from "execa";
+import compareDesc from "date-fns/compareDesc";
 
 export const GARDEN_DIR = path.join(process.cwd(), `pages/garden`);
 
@@ -41,7 +42,7 @@ export const getLeaves = async () => {
   const paths = await fs.readdir(GARDEN_DIR);
   const markdown = paths.filter((p) => p.endsWith(".md"));
 
-  return Promise.all(
+  const leaves = await Promise.all(
     markdown.map(async (file) => {
       const fullPath = path.join(GARDEN_DIR, file);
       const content = await fs.readFile(fullPath, "utf-8");
@@ -56,4 +57,11 @@ export const getLeaves = async () => {
       };
     })
   );
+
+  return leaves.sort((a, b) => {
+    const aDate = a.lastUpdatedDate ? new Date(a.lastUpdatedDate) : new Date();
+    const bDate = b.lastUpdatedDate ? new Date(b.lastUpdatedDate) : new Date();
+
+    return compareDesc(aDate, bDate);
+  });
 };

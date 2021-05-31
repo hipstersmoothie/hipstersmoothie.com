@@ -2,7 +2,7 @@
 
 # Better Default Tools
 
-A lot of the tools you use are probably super old! That's great cause they work no problem, but they might not be as pretty as we want them! All of the following are tools I use to replace default tooling that is preinstalled on most computers.
+A lot of the tools you use are probably super old! That's great cause they work no problem, but they might not be as pretty as we want them. All of the following are tools I use to replace default tooling that is preinstalled on most computers.
 
 ## `cat` => `bat`
 

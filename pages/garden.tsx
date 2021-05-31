@@ -1,6 +1,7 @@
-import format from "date-fns/format";
 import Head from "next/head";
 import Link from "next/link";
+
+import { Time } from "../components/Time";
 import { Header } from "../components/Header";
 import { NoteSwitcher } from "../components/NoteSwitcher";
 import {
@@ -28,9 +29,9 @@ export default function Garden({ leaves = [] }: GardenProps) {
       <Header active="garden" />
 
       <main className="pb-16">
-        <div className="px-8 max-w-xl mx-auto">
-          <h1 className="text-3xl font-semibold mt-10 mb-6">
-            Welcome to my Digital Garden!
+        <div className="px-6 max-w-xl mx-auto">
+          <h1 className="text-4xl font-semibold mt-10 mb-6">
+            My Digital Garden
           </h1>
 
           <h2 className="text-lg font-medium mb-2">What the heck is this?!</h2>
@@ -86,12 +87,10 @@ export default function Garden({ leaves = [] }: GardenProps) {
               >
                 <a className="border rounded-lg px-6 py-5 shadow-none transition-shadow hover:shadow-lg hover:border-pink-400 active:shadow">
                   <h2 className="text-lg mb-2">{leaf.title}</h2>
-                  <time
-                    dateTime={leaf.lastUpdatedDate}
+                  <Time
+                    date={leaf.lastUpdatedDate || new Date().toLocaleString()}
                     className="text-gray-700 text-sm"
-                  >
-                    {format(new Date(leaf.lastUpdatedDate), "MMM dd, yyyy")}
-                  </time>
+                  />
                 </a>
               </Link>
             ))}

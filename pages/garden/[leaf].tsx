@@ -20,8 +20,8 @@ interface LeafContextShape {
 }
 
 export const LeafContext = createContext<LeafContextShape>({
-  currentLeaf: undefined
-})
+  currentLeaf: undefined,
+});
 
 interface LeafProps {
   currentLeaf: LeafObject;

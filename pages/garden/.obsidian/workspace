@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Terminal Setup.md",
+            "file": "Podcast Editing Organization.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Terminal Setup.md",
+                "file": "Podcast Editing Organization.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,10 +88,10 @@
   },
   "active": "cf802b96737ed5c9",
   "lastOpenFiles": [
+    "Untitled.md",
+    "Better Default Tools.md",
     "Terminal Setup.md",
     "Git Aliases.md",
-    "md.md",
-    "Better Default Tools.md",
-    "Untitled.md"
+    "md.md"
   ]
 }
