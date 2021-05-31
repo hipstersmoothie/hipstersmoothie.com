@@ -16,6 +16,7 @@ export const Paragraph: React.FC = (props) => {
 };
 
 export const Anchor = (props: React.ComponentProps<"a">) => {
+  const showTimeout = useRef<ReturnType<typeof setTimeout>>();
   const hideTimeout = useRef<ReturnType<typeof setTimeout>>();
   const [showPopper, setShowPopper] = useState(false);
   const [referenceElement, setReferenceElement] =
@@ -52,6 +53,9 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
     const hidePopperDelayed = () => {
       hideTimeout.current = setTimeout(() => setShowPopper(false), 500);
     };
+    const showPopperDelayed = () => {
+      showTimeout.current = setTimeout(() => setShowPopper(true), 500);
+    };
 
     return (
       <>
@@ -62,9 +66,12 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
             ref={setReferenceElement}
             onMouseEnter={() => {
               clearTimeout(hideTimeout.current);
-              setShowPopper(true);
+              showPopperDelayed();
             }}
-            onMouseOut={hidePopperDelayed}
+            onMouseOut={() => {
+              clearTimeout(showTimeout.current)
+              hidePopperDelayed()
+            }}
           />
         </Link>
 
@@ -166,18 +173,18 @@ export const H1 = (props: React.ComponentProps<'h1'>) => {
   return <>
     <h1
       {...props}
-      className="lvl1 text-4xl md:text-6xl mt-6 md:mt-8 pb-4 md:pb-6 mb-4 md:mb-6 border-b"
+      className="lvl1 text-4xl md:text-6xl mt-6 md:mt-8 pb-4 md:pb-6 mb-6 border-b"
     />
-    <div className="space-x-4 text-sm flex mb-8">
+    <div className="space-y-3 md:space-x-4 md:space-y-0 text-sm flex flex-col md:flex-row mb-8 md:mb-12">
       <div className="text-gray-500">
-        <span className="italic">Created:{" "}</span>
+        <span className="italic">🍼 Created:{" "}</span>
         <time dateTime={currentLeaf.creationDate} className="text-gray-900 font-medium">
           {format(new Date(currentLeaf.creationDate), "MMM dd, yyyy")}
         </time>
       </div>
 
       <div className="text-gray-500">
-        <span className="italic">Last updated:{" "}</span>
+        <span className="italic">🌳 Last updated:{" "}</span>
         <time dateTime={currentLeaf.lastUpdatedDate} className="text-gray-900 font-medium">
           {format(new Date(currentLeaf.lastUpdatedDate), "MMM dd, yyyy")}
         </time>
