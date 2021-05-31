@@ -24,25 +24,9 @@ interface LeafProps {
 }
 
 const Leaf = ({ source, title, leaves, backLinks }: LeafProps) => {
-  const ref = useRef(null);
   const Component = useMemo(() => getMDXComponent(source), [source]);
-  const isIframe = typeof window !== "undefined" && window.frameElement;
   const markdownContent = <Component components={components} />;
-  const effect = typeof window === 'undefined' ? useEffect : useLayoutEffect
-
-  effect(() => {
-    if (window.top != window.self && ref.current) {
-      ref.current.className = "px-3 py-2";
-    }
-  }, []);
-
-  if (isIframe) {
-    return (
-      <div ref={ref} id="iframe-preview">
-        {markdownContent}
-      </div>
-    );
-  }
+  const isIframe = typeof window === 'undefined' ? false : window.top != window.self
 
   return (
     <div id="iframe-preview">
@@ -56,7 +40,7 @@ const Leaf = ({ source, title, leaves, backLinks }: LeafProps) => {
         {markdownContent}
 
         {backLinks.length > 0 && (
-          <>
+          <div className="back-links">
             <HorizontalRule />
             <h2 className="font-black text-xl mb-4">Back Links</h2>
             <div>
@@ -64,11 +48,11 @@ const Leaf = ({ source, title, leaves, backLinks }: LeafProps) => {
                 <Anchor href={`/garden/${link}`}>{link}</Anchor>
               ))}
             </div>
-          </>
+          </div>
         )}
       </div>
 
-      <NoteSwitcher leaves={leaves} />
+      {!isIframe && <NoteSwitcher leaves={leaves} />}
     </div>
   );
 };

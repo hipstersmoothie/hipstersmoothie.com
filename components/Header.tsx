@@ -7,7 +7,7 @@ interface HeaderProps {
 
 export const Header = ({ active }: HeaderProps) => {
   return (
-    <div className="h-16 border-b w-full">
+    <div className="header h-16 border-b w-full">
       <div className="h-full flex items-center justify-between px-4 md:px-10 max-w-[100ch] mx-auto">
         <Link passHref href="/">
           <a>

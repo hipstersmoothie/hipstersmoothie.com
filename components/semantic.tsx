@@ -153,7 +153,7 @@ export const Tag = (props: React.ComponentProps<"button">) => {
   return (
     <button
       {...props}
-      className="bg-pink-400 rounded-full inline-flex px-3 text-white font-semibold mr-2 last:mr-0"
+      className="bg-pink-400 rounded-full inline-flex px-3 text-white font-semibold mr-2 last:mr-0 focus:outline-none"
       onClick={() => setSearch(props.children as string)}
     />
   );

@@ -50,3 +50,8 @@ a {
 .command-list {
   max-height: min(50vh, 900px);
 }
+
+body.iframe .back-links,
+body.iframe .header {
+  display: none;
+}
