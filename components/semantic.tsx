@@ -75,6 +75,10 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
               clearTimeout(showTimeout.current);
               hidePopperDelayed();
             }}
+            onClick={e => {
+              clearTimeout(showTimeout.current);
+              props.onClick?.(e)
+            }}
           />
         </Link>
 
