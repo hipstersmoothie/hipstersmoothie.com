@@ -14,6 +14,7 @@ const getLinks = async (content: string) => {
     .use(remark2rehype)
     .use(stringify)
     .use(wikiLinkPlugin, {
+      aliasDivider: "|",
       pageResolver: (name: string) => {
         links.push(name);
         return [name];

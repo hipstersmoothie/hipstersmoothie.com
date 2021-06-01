@@ -6,13 +6,13 @@
 
 ### [Fantastical](https://flexibits.com/fantastical)
 
-Fantasical integrates with any calendar pretty easily and the way you can customize meeting notifcations has saved me more than once.
+Fantastical integrates with any calendar pretty easily and the way you can customize meeting notifications has saved me more than once.
 
 ### [Alfred](https://www.alfredapp.com)
 
 I am by no means an Alfred power user, but as far as a spotlight replacement goes it's a bit better in my opinion.
-My main gripe is that splotlight is bad at guessing what I want and often autocompletes files I don't want to open.
-Alfred is more streamlined and I haven't experinced those issues using i
+My main gripe is that spotlight is bad at guessing what I want and often autocompletes files I don't want to open.
+Alfred is more streamlined and I haven't experienced those issues using i
 
 ### [Rectangle](https://rectangleapp.com)
 
@@ -63,7 +63,7 @@ My pro tips here goes for any editor:
 ### [Gitup](https://gitup.co)
 
 While I do love my [[Git Aliases]] there is still room for a visual client in my workflow.
-Gitup is where I learned to visualize my git repo as a tree and naviagate it with eas.
+Gitup is where I learned to visualize my git repo as a tree and navigate it with eas.
 I'm a big believer in starting git with a visual client like this, it helps so much to be able to see what you actually doing. I tend to use my [[Git Aliases]] for my daily git interactions (add, commit, push) and do everything else in Gitup.
 
 This birds eye view lends a few git operations to feel nicer:
