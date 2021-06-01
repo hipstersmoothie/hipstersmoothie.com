@@ -13,7 +13,7 @@ function Note({ title, tags }: LeafObject) {
       {tags?.length > 0 && (
         <div className="flex space-x-2 items-baseline pt-[1px]">
           {tags.map((tag) => (
-            <div className="text-[.6rem] md:text-xs rounded bg-pink-400 text-white px-1 py-[0.125rem]">
+            <div key={tag} className="text-[.6rem] md:text-xs rounded bg-pink-400 text-white px-1 py-[0.125rem]">
               {tag}
             </div>
           ))}
@@ -30,11 +30,10 @@ interface NoteSwitcherProps {
 export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
   const paletteWrapper = useRef<HTMLDivElement>(null);
   const router = useRouter();
-  const [search, setSearch] = useQueryParam("search", StringParam);
+  const [search] = useQueryParam("search", StringParam);
 
   const onClose = () => {
     enableBodyScroll(paletteWrapper.current);
-    setSearch(undefined);
   };
 
   if (typeof window === "undefined") {
@@ -42,7 +41,7 @@ export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
   }
 
   return (
-    <div>
+    <div ref={paletteWrapper}>
       <CommandPalette
         closeOnSelect
         resetInputOnOpen
