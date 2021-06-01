@@ -65,7 +65,7 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
         <Link passHref href={props.href}>
           <a
             {...props}
-            className="underline text-pink-500"
+            className={makeClass("underline text-pink-500", props.className)}
             ref={setReferenceElement}
             onMouseEnter={() => {
               clearTimeout(hideTimeout.current);

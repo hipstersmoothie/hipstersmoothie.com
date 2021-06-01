@@ -51,7 +51,7 @@ const Leaf = ({ source, title, leaves, backLinks, currentLeaf }: LeafProps) => {
               <div className="back-links">
                 <HorizontalRule />
                 <h2 className="font-black text-xl mb-4">Back Links</h2>
-                <div>
+                <div className="flex flex-col space-y-2 items-start">
                   {backLinks.map((link) => (
                     <Anchor href={`/garden/${link}`}>{link}</Anchor>
                   ))}
