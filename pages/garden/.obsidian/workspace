@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "devtools.fm.md",
+            "file": "Better Default Tools.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devtools.fm.md",
+                "file": "Better Default Tools.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,12 +88,13 @@
   },
   "active": "cf802b96737ed5c9",
   "lastOpenFiles": [
-    "devtools.fm.md",
-    "Git Aliases.md",
-    "Terminal Setup.md",
     "Better Default Tools.md",
+    "devtools.fm.md",
+    "Essential Mac Apps.md",
+    "Git Aliases.md",
+    "md.md",
     "Podcast Editing Organization.md",
-    "Untitled.md",
-    "md.md"
+    "Terminal Setup.md",
+    "Untitled.md"
   ]
 }
