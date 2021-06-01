@@ -16,7 +16,7 @@ Every episode project has a composition titled "Episode N" with the multi-track 
 
 While the main compoisitin is great for doing all of our work in, it can become hard to see whats gone after a lot of editting. To accomadate for this I create a "Raw Video" folder in the project. This folder houses an unedited composition of each podcast participant so I can easily see the original content along with it's transcript.
 
-## "Social Clips" Folder
+## "[[Podcast Social Clips|Social Clips]]" Folder
 
 While I'm editting the main composition I make sure to highlight sections of the podcast I think would make good clips for sharing across social media websites.
 

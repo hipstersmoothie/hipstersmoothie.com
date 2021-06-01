@@ -9,9 +9,17 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Better Default Tools.md",
+            "file": "Podcast Editing Organization.md",
             "mode": "source"
           }
+        }
+      },
+      {
+        "id": "edd4ccddc0d505e8",
+        "type": "leaf",
+        "state": {
+          "type": "graph",
+          "state": {}
         }
       }
     ],
@@ -68,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Better Default Tools.md",
+                "file": "Podcast Editing Organization.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,13 +96,15 @@
   },
   "active": "cf802b96737ed5c9",
   "lastOpenFiles": [
-    "Better Default Tools.md",
+    "Podcast Editing Organization.md",
+    "Podcast Production Process.md",
+    "Podcast Social Clips.md",
+    "Terminal Setup.md",
+    "Untitled.md",
+    "Social Clips.md",
     "devtools.fm.md",
     "Essential Mac Apps.md",
-    "Git Aliases.md",
-    "md.md",
-    "Podcast Editing Organization.md",
-    "Terminal Setup.md",
-    "Untitled.md"
+    "Better Default Tools.md",
+    "Git Aliases.md"
   ]
 }
