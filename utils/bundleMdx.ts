@@ -40,10 +40,10 @@ export const bundleMDX = async (content: string) => {
         [
           wikiLinkPlugin,
           {
-            aliasDivider: '|',
-            pageResolver: (name: string) =>{
-              console.log({name})
-              return  [name]
+            aliasDivider: "|",
+            pageResolver: (name: string) => {
+              console.log({ name });
+              return [name];
             },
             hrefTemplate: (link: string) => `/garden/${link}`,
           },

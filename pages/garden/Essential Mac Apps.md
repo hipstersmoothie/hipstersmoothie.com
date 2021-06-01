@@ -1,4 +1,4 @@
-#tools 
+#tools
 
 # Essential Mac Apps
 
@@ -22,9 +22,9 @@ It's something you don't know you've needed until you start using it, highly rec
 
 ### [Obsidian](https://obsidian.md)
 
-I've used various note taking app to varying degrees of success. 
+I've used various note taking app to varying degrees of success.
 The one that seems the most useful (and is how I wrote notes for hipstersmoothie.com) is Obsidian.
-All your notes are written in markdown stored wherever you want (in my case GitHub),  the UI is pretty and very extensible, and how your notes connect together is great for learning and exploration.
+All your notes are written in markdown stored wherever you want (in my case GitHub), the UI is pretty and very extensible, and how your notes connect together is great for learning and exploration.
 
 ## Developer Apps
 
@@ -55,7 +55,7 @@ ColorSlurp gets that right and shows you the hex value, and best of all it's fre
 ### [VSCode](https://code.visualstudio.com)
 
 I've been a user for years and have no complaints.
-My pro tips here goes for any editor: 
+My pro tips here goes for any editor:
 
 - Learn to use the keybard to navigate you code
 - Use duplicate cursors whenever you can

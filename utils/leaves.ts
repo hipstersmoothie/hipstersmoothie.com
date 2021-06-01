@@ -29,7 +29,10 @@ const getDate = async (filename: string): Promise<DateProperties> => {
 
 export const getTags = (str: string) => {
   const TAG_REGEX = /^#(.*)$/;
-  const tags = str.split(" ").map(t => t.trim()).filter(Boolean);
+  const tags = str
+    .split(" ")
+    .map((t) => t.trim())
+    .filter(Boolean);
 
   if (tags.every((tag) => tag.match(TAG_REGEX))) {
     return tags;

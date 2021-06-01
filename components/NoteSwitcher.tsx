@@ -13,7 +13,10 @@ function Note({ title, tags }: LeafObject) {
       {tags?.length > 0 && (
         <div className="flex space-x-2 items-baseline pt-[1px]">
           {tags.map((tag) => (
-            <div key={tag} className="text-[.6rem] md:text-xs rounded bg-pink-400 text-white px-1 py-[0.125rem]">
+            <div
+              key={tag}
+              className="text-[.6rem] md:text-xs rounded bg-pink-400 text-white px-1 py-[0.125rem]"
+            >
               {tag}
             </div>
           ))}

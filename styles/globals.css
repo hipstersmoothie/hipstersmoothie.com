@@ -55,3 +55,13 @@ body.iframe .back-links,
 body.iframe .header {
   display: none;
 }
+
+.svg-text {
+  text-align: left;
+  fill: white;
+}
+
+.stroke-text {
+  stroke: black;
+  stroke-width: 4px;
+}

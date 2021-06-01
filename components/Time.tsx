@@ -7,12 +7,12 @@ interface TimeProps {
 
 export const Time = ({ date, className }: TimeProps) => {
   if (!date) {
-    return
+    return;
   }
-  
+
   return (
     <time dateTime={date} className={className}>
       {format(new Date(date), "MMM dd, yyyy")}
     </time>
   );
-}
+};

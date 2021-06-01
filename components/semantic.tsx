@@ -75,9 +75,9 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
               clearTimeout(showTimeout.current);
               hidePopperDelayed();
             }}
-            onClick={e => {
+            onClick={(e) => {
               clearTimeout(showTimeout.current);
-              props.onClick?.(e)
+              props.onClick?.(e);
             }}
           />
         </Link>
@@ -126,19 +126,25 @@ export const BlockQuoteAuthor = ({ children, href }: BlockQuoteAuthorProps) => {
   return name;
 };
 
-interface BlockquoteProps {
+interface BlockquoteProps extends React.ComponentProps<"figure"> {
   author?: React.ReactNode;
 }
 
-export const Blockquote: React.FC<BlockquoteProps> = ({ author, ...props }) => {
+export const Blockquote: React.FC<BlockquoteProps> = ({
+  author,
+  className,
+  children,
+  ...props
+}) => {
   return (
     <figure
-      className="-m-2 my-6 grid"
+      {...props}
+      className={makeClass("-m-2 my-6 grid", className)}
       style={{ gridTemplateColumns: "8px auto" }}
     >
-      <div className="rounded rounded-r-none bg-pink-500 h-full" />
-      <div className="rounded-lg rounded-l-none border-2 border-l-0 px-4">
-        <blockquote {...props} />
+      <div className="rounded rounded-r-none bg-pink-500" />
+      <div className="rounded-lg rounded-l-none bg-white border-2 border-l-0 px-4">
+        <blockquote children={children} />
         {author && (
           <figcaption className="-mt-2 mb-6 text-right text-[1.05rem] text-gray-600 font-semibold">
             <span className="text-xl font-medium">{"~ "}</span>
@@ -186,7 +192,7 @@ export const H1 = (props: React.ComponentProps<"h1">) => {
 
       <div className="space-y-3 md:space-x-4 md:space-y-0 text-sm flex flex-col md:flex-row mb-8 md:mb-12">
         <div className="text-gray-500">
-          <span className="italic">🍼 Created: </span>
+          <span className="italic">🌱 Created: </span>
           <Time
             date={currentLeaf.creationDate || new Date().toLocaleString()}
             className="text-gray-900 font-medium"

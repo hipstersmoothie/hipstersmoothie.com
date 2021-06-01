@@ -44,7 +44,7 @@ const Leaf = ({ source, title, leaves, backLinks, currentLeaf }: LeafProps) => {
 
           <Header active="garden" />
 
-          <div className="px-4 md:px-10 pb-16 pt-2 md:pt-6 max-w-[100ch] mx-auto">
+          <div className="px-4 md:px-10 pb-6 md:pb-16 pt-6 md:pt-12 max-w-[100ch] mx-auto">
             {markdownContent}
 
             {backLinks.length > 0 && (
@@ -53,7 +53,9 @@ const Leaf = ({ source, title, leaves, backLinks, currentLeaf }: LeafProps) => {
                 <h2 className="font-black text-xl mb-4">Back Links</h2>
                 <div className="flex flex-col space-y-2 items-start">
                   {backLinks.map((link) => (
-                    <Anchor key={link} href={`/garden/${link}`}>{link}</Anchor>
+                    <Anchor key={link} href={`/garden/${link}`}>
+                      {link}
+                    </Anchor>
                   ))}
                 </div>
               </div>
