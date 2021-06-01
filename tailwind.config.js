@@ -1,10 +1,13 @@
 module.exports = {
   mode: "jit",
   darkMode: "media",
-  purge: [
-    "./pages/**/*.{js,jsx,ts,tsx,vue}",
-    "./components/**/*.{js,jsx,ts,tsx,vue}",
-  ],
+  purge: {
+    content: [
+      "./pages/**/*.{js,jsx,ts,tsx,vue}",
+      "./pages/garden/[leaf].tsx",
+      "./components/**/*.{js,jsx,ts,tsx,vue}",
+    ],
+  },
   theme: {
     extend: {},
   },

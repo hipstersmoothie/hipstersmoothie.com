@@ -53,7 +53,7 @@ const Leaf = ({ source, title, leaves, backLinks, currentLeaf }: LeafProps) => {
                 <h2 className="font-black text-xl mb-4">Back Links</h2>
                 <div className="flex flex-col space-y-2 items-start">
                   {backLinks.map((link) => (
-                    <Anchor href={`/garden/${link}`}>{link}</Anchor>
+                    <Anchor key={link} href={`/garden/${link}`}>{link}</Anchor>
                   ))}
                 </div>
               </div>
