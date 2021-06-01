@@ -48,7 +48,7 @@ a {
 }
 
 .command-list {
-  max-height: min(50vh, 900px);
+  max-height: min(70vh, 900px);
 }
 
 body.iframe .back-links,

@@ -61,10 +61,11 @@ export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
             "tags.7",
           ],
           threshold: 0,
-          limit: Infinity,
+          limit: 7,
           allowTypo: true,
           scoreFn: null,
         }}
+        maxDisplayed={100}
         highlightFirstSuggestion={false}
         header={<div className="text-xl mt-2 mb-4 mx-1">Note Switcher</div>}
         placeholder="Type the name of a note"
