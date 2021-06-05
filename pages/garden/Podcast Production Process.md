@@ -9,10 +9,9 @@ We should automate more of this (well at least publishing).
 
 1. **First Pass:**
 
-   - Remove as many filler words as you can
-   - Fix glaring issues in transcript
-   - Fix large pacing issue
-   - Make cuts of things that shouldn't be in the episode
+   - Make video cuts
+   - Remove long gaps
+   - Set active camera
 
 2. **Second Pass:**
 
@@ -20,22 +19,16 @@ We should automate more of this (well at least publishing).
    - Fix transcript
    - Fix Grammar
    - Fix timing issues
-   - Make cuts
 
    **Timing style guide:**
 
-   - If people take super long pauses shorten it to `.5-1s`
+   - If people take super long pauses shorten it to `.6-1s`
    - If a sentence starts with a filler word, super repeated word, or a false start I remove it
    - Remove mid sentence filler word if the audio still works
 
-3. **Third Pass:**
-
-   - Run at `3x` speed
-   - Make video cuts and switch between speakers
-
-4. Add intro and outro
-5. Add section markers
-6. Break sections that are 8+ minutes into clips for secondary YouTube account
+3. Add intro and outro
+4. Add section markers
+5. Break sections that are 8+ minutes into clips for secondary YouTube account
 
 ## Publishing
 
