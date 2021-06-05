@@ -27,7 +27,7 @@ We had a few hiccups with recording, but after gettign used to it it's gone pret
 
 This app is all about background noise removal.
 I use it whenever I'm recording a podcast cause my dogs love to bark!
-Krisp's AI can remove background noise like barks to a magical degree.
+[Krisp](http://krisp.ai)'s AI can remove background noise like barks to a magical degree.
 
 #### Loopback
 
