@@ -100,7 +100,7 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
   return (
     <a
       {...props}
-      target="_blank"
+      target={props["data-heading"] ? "_self" : "_blank"}
       rel="noopener"
       className="underline text-blue-500"
     />

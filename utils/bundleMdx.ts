@@ -2,6 +2,8 @@ import * as MDXBundler from "mdx-bundler";
 import { wikiLinkPlugin } from "remark-wiki-link";
 import gfm from "remark-gfm";
 import shiki from "rehype-shiki-reloaded";
+import autolinkHeadings from "rehype-autolink-headings";
+import slug from "rehype-slug";
 import visit from "unist-util-visit";
 
 import { getTags } from "./leaves";
@@ -51,6 +53,11 @@ export const bundleMDX = async (content: string) => {
       ];
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
+        slug,
+        [
+          autolinkHeadings,
+          { behavior: "wrap", properties: { "data-heading": true } },
+        ],
         [shiki, { darkTheme: "github-dark" }],
       ];
 

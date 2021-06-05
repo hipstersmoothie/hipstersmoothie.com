@@ -15,6 +15,16 @@ a {
   box-sizing: border-box;
 }
 
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
 .lvl1 code {
   font-size: calc(theme("fontSize.4xl") * 0.93);
 }
