@@ -83,3 +83,13 @@ I don't pay for any advertisements but I have accounts set up on many platforms 
 
 Once I have a clip I use [later.com](https://later.com) to post to all of the platforms I'm on.
 With Later I can schedule posts throughout the week, and even customize clips for each platform
+
+## Analytics
+
+This is an area we could probably be better in, but it start getting costly.
+Currently we get analytics in a few different ways:
+
+- Video - Just check YouTube play counts
+- Podcast - We use Buzzsprouts built-in analyics
+- Social - Nothing other than manually checking
+- Website - Here we use [plausible](http://plausible.io) so we don't sell you data to google
