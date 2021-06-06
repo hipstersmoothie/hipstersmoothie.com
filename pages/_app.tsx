@@ -2,9 +2,10 @@ import { memo, useMemo } from "react";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { QueryParamProvider as ContextProvider } from "use-query-params";
+import { Toaster } from "react-hot-toast";
 
 import "tailwindcss/tailwind.css";
-import 'tippy.js/dist/tippy.css'; 
+import "tippy.js/dist/tippy.css";
 import "../styles/globals.css";
 
 const QueryParamProviderComponent = (props: { children?: React.ReactNode }) => {
@@ -56,6 +57,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryParamProvider>
       <Component {...pageProps} />
+
+      <Toaster />
     </QueryParamProvider>
   );
 }

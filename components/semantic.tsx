@@ -4,6 +4,8 @@ import Link from "next/link";
 import { ComponentMap } from "mdx-bundler/client";
 import { usePopper } from "react-popper";
 import { useQueryParam, StringParam } from "use-query-params";
+import toast from "react-hot-toast";
+import copy from "copy-to-clipboard";
 
 import { Time } from "./Time";
 import { LeafContext } from "../pages/garden/[leaf]";
@@ -221,6 +223,16 @@ export const H1 = (props: React.ComponentProps<"h1">) => {
   );
 };
 
+const onHeadingClick = (e: React.MouseEvent<HTMLHeadingElement>) => {
+  // Update the location hash without scrolling
+  history.replaceState(null, null, `#${e.currentTarget.id}`);
+  // Copy new location to clipboard
+  copy(window.location.toString());
+
+  toast.success("Link to heading copied to clipboard!", { duration: 3 * 1000 });
+  e.preventDefault();
+};
+
 export const components: ComponentMap = {
   p: Paragraph,
   a: Anchor,
@@ -264,16 +276,56 @@ export const components: ComponentMap = {
     );
   },
   h1: H1,
-  h2: (props) => (
+  h2: (props: React.ComponentProps<"h2">) => (
     <h2
       {...props}
       className="lvl2 text-2xl mt-10 mb-6 pb-3 border-b border-gray-300 font-medium"
+      onClick={(e) => {
+        props.onClick?.(e);
+        onHeadingClick(e);
+      }}
     />
   ),
-  h3: (props) => <h3 {...props} className="lvl3 text-xl my-4 font-semibold" />,
-  h4: (props) => <h4 {...props} className="lvl4 text-lg my-4 font-bold" />,
-  h5: (props) => <h5 {...props} className="lvl5 my-4 font-bold" />,
-  h6: (props) => <h6 {...props} className="lvl6 text-sm my-4 font-bold" />,
+  h3: (props: React.ComponentProps<"h3">) => (
+    <h3
+      {...props}
+      className="lvl3 text-xl my-4 font-semibold"
+      onClick={(e) => {
+        props.onClick?.(e);
+        onHeadingClick(e);
+      }}
+    />
+  ),
+  h4: (props: React.ComponentProps<"h4">) => (
+    <h4
+      {...props}
+      className="lvl4 text-lg my-4 font-bold"
+      onClick={(e) => {
+        props.onClick?.(e);
+        onHeadingClick(e);
+      }}
+    />
+  ),
+  h5: (props: React.ComponentProps<"h5">) => (
+    <h5
+      {...props}
+      className="lvl5 my-4 font-bold"
+      onClick={(e) => {
+        props.onClick?.(e);
+        onHeadingClick(e);
+      }}
+    />
+  ),
+  h6: (props: React.ComponentProps<"h6">) => (
+    <h6
+      {...props}
+      className="lvl6 text-sm my-4 font-bold"
+      onClick={(e) => {
+        props.onClick?.(e);
+        onHeadingClick(e);
+      }}
+    />
+  ),
   table: (props) => <table {...props} className="w-full my-6" />,
   th: (props) => (
     <th {...props} className="pb-4 px-3 text-left font-semibold" />
