@@ -16,7 +16,7 @@
 
 ## Bugs
 
-- [ ] cmd+k then escape scrolls page
+- [x] cmd+k then escape scrolls page
 
 ## Notes
 

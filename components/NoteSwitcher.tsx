@@ -72,7 +72,15 @@ export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
         header={<div className="text-xl mt-2 mb-4 mx-1">Note Switcher</div>}
         placeholder="Type the name of a note"
         hotKeys="command+k"
-        onAfterOpen={() => disableBodyScroll(paletteWrapper.current)}
+        onAfterOpen={() => {
+          // Safari Hack: If the user presses escape immediately after
+          // opening the note switcher it will scroll to the bottom of 
+          // the page. This code simulates user interaction and fixes 
+          // the scroll issue.
+          (document.activeElement as any).value = ' ';
+          (document.activeElement as any).value = '';
+          disableBodyScroll(paletteWrapper.current);
+        }}
         onRequestClose={onClose}
         onSelect={onClose}
         renderCommand={Note}
