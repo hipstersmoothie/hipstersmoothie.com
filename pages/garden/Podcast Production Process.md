@@ -2,14 +2,20 @@
 
 # Podcast Production Process
 
-The current publishing process for an episode of [[devtools.fm]].
+The current publishing process for an episode of [[devtools.fm]] using [Descript](https://descript.com).
 We should automate more of this (well at least publishing).
 
 ## Editing
 
+Before you start you should do a few things:
+
+1. Upload media to Descript app
+2. Rename the files to the first name of the speaker, this will then be used in the transcript
+3. Set the default speaker in the multi-track sequence. Choose the person who talks to most for less work!
+
 ### Video Cuts
 
-It is _crucial_ if your using a multitrack sequence to [[Podcast Editing Organization|organize your podcast]] and want to make a video that you do this step first. During this pass you want to get the general pacing right and set all the cameras. If you don't set the camara first you will have exponentially more clips to set the speaker for, which can be a super time consuming process. Doing it first makes the problem not exist!
+It is _crucial_ if your using a multi-track sequence to [[Podcast Editing Organization|organize your podcast]] and want to make a video that you do this step first. During this pass you want to get the general pacing right and set all the cameras. If you don't set the camara first you will have exponentially more clips to set the speaker for, which can be a super time consuming process. Doing it first makes the problem not exist!
 
 **What to look out for:**
 

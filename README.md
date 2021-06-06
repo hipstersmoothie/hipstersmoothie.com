@@ -20,5 +20,7 @@
 
 - [ ] Write dumb components
 - [ ] Eat you own dog food
+- [ ] Move post: meeting light
+- [ ] Move post: JS monorepo tooling
 - [x] expand production process
 - [x] Add analytics to podcast tools
