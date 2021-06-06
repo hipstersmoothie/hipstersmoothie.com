@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
+import { PlantHealth } from "../../components/PlantHealth";
 import { Time } from "../../components/Time";
 import { Header } from "../../components/Header";
 import { NoteSwitcher } from "../../components/NoteSwitcher";
@@ -9,7 +10,6 @@ import {
   BlockQuoteAuthor,
   HorizontalRule,
   Paragraph,
-  UnorderedList,
   Anchor,
 } from "../../components/semantic";
 import { getLeaves, LeafObject } from "../../utils/leaves";
@@ -116,15 +116,19 @@ export default function Garden({ leaves = [] }: GardenProps) {
               </span>
             </div>
           </div>
-          <div className="grid items-baseline gap-4 sm:grid-cols-2 md:grid-cols-4">
+          <div className="grid items-baseline gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {leaves.map((leaf) => (
               <Link
                 passHref
                 href={`/garden/${leaf.title}`}
                 key={`/garden/${leaf.title}`}
               >
-                <a className="border rounded-lg px-6 py-5 shadow-none transition-shadow hover:shadow-lg hover:border-pink-400 active:shadow">
-                  <h2 className="text-lg mb-2">{leaf.title}</h2>
+                <a className="border rounded-lg px-6 py-5 shadow-none transition-shadow hover:shadow-lg hover:border-gray-400 active:shadow">
+                  <div className="flex justify-between space-x-4">
+                    <h2 className="text-lg mb-2">{leaf.title}</h2>
+                    <PlantHealth leaf={leaf} />
+                  </div>
+
                   <Time
                     date={leaf.lastUpdatedDate || new Date().toLocaleString()}
                     className="text-gray-700 text-sm"

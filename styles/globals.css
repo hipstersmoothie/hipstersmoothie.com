@@ -75,3 +75,11 @@ body.iframe .header {
   stroke: black;
   stroke-width: 4px;
 }
+
+.tippy-box {
+  @apply bg-green-100 text-green-900;
+}
+
+.tippy-arrow::before {
+  border-top-color: theme('backgroundColor.green.100') !important;
+}

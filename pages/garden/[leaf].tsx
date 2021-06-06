@@ -44,7 +44,7 @@ const Leaf = ({ source, title, leaves, backLinks, currentLeaf }: LeafProps) => {
 
           <Header active="garden" />
 
-          <div className="px-4 md:px-10 pb-6 md:pb-16 pt-6 md:pt-12 max-w-[100ch] mx-auto">
+          <div className="px-4 md:px-10 pb-6 md:pb-32 pt-6 md:pt-12 max-w-[100ch] mx-auto">
             {markdownContent}
 
             {backLinks.length > 0 && (

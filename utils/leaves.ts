@@ -5,12 +5,16 @@ import compareDesc from "date-fns/compareDesc";
 
 export const GARDEN_DIR = path.join(process.cwd(), `pages/garden`);
 
-interface DateProperties {
+export interface EditProperties {
+  edits: number;
+}
+
+export interface DateProperties {
   lastUpdatedDate: string;
   creationDate: string;
 }
 
-export interface LeafObject extends DateProperties {
+export interface LeafObject extends DateProperties, EditProperties {
   file: string;
   path: string;
   tags: string[];
@@ -25,6 +29,12 @@ const getDate = async (filename: string): Promise<DateProperties> => {
     creationDate: dates[dates.length - 1],
     lastUpdatedDate: dates[0],
   };
+};
+
+const getEdits = async (filename: string): Promise<number> => {
+  const { stdout } = await execa("git", ["log", "--oneline", `${filename}`]);
+
+  return stdout.split("\n").length;
 };
 
 export const getTags = (str: string) => {
@@ -56,6 +66,7 @@ export const getLeaves = async () => {
         path: fullPath,
         title: file.replace(".md", ""),
         tags: getTags(firstLine),
+        edits: await getEdits(fullPath),
         ...(await getDate(fullPath)),
       };
     })

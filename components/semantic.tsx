@@ -8,6 +8,7 @@ import { useQueryParam, StringParam } from "use-query-params";
 import { Time } from "./Time";
 import { LeafContext } from "../pages/garden/[leaf]";
 import { IframeContext } from "./IframeContext";
+import { PlantHealth } from "./PlantHealth";
 
 export const Paragraph: React.FC = (props) => {
   if (typeof props.children === "object" && "type" in props.children) {
@@ -188,25 +189,33 @@ export const H1 = (props: React.ComponentProps<"h1">) => {
     <>
       <h1
         {...props}
-        className="lvl1 text-4xl md:text-6xl mt-6 md:mt-8 pb-4 md:pb-6 mb-6 border-b"
+        className="lvl1 mt-6 md:mt-8 pb-4 md:pb-6 mb-6 md:mb-4 border-b flex justify-between text-4xl md:text-6xl"
       />
 
-      <div className="space-y-3 md:space-x-4 md:space-y-0 text-sm flex flex-col md:flex-row mb-8 md:mb-12">
-        <div className="text-gray-500">
-          <span className="italic">🌱 Created: </span>
-          <Time
-            date={currentLeaf.creationDate || new Date().toLocaleString()}
-            className="text-gray-900 font-medium"
-          />
+      <div className="mb-10 md:mb-12 sm:flex items-baseline justify-between">
+        <div className="space-x-4 md:space-y-0 text-sm flex flex-row mb-4 md:mb-0">
+          <div className="text-gray-500">
+            <span className="italic">Created: </span>
+            <Time
+              date={currentLeaf.creationDate || new Date().toLocaleString()}
+              className="text-gray-900 font-medium"
+            />
+          </div>
+
+          <div className="text-gray-500">
+            <span className="italic">Updated: </span>
+            <Time
+              date={currentLeaf.lastUpdatedDate || new Date().toLocaleString()}
+              className="text-gray-900 font-medium"
+            />
+          </div>
         </div>
 
-        <div className="text-gray-500">
-          <span className="italic">🌳 Last updated: </span>
-          <Time
-            date={currentLeaf.lastUpdatedDate || new Date().toLocaleString()}
-            className="text-gray-900 font-medium"
-          />
-        </div>
+        <PlantHealth
+          showTooltip={false}
+          leaf={currentLeaf}
+          className="text-green-900 text-sm font-medium"
+        />
       </div>
     </>
   );

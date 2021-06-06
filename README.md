@@ -1,6 +1,5 @@
 # TODO
 
-- [ ] Add post "growth" emoji
 - [ ] Copy heading link to clipboard + show toast
 - [ ] Add analytics to podcast tools
 - [ ] Add analytics to website itself
@@ -8,8 +7,9 @@
   - [ ]  per post?
 - [ ] Graph?
 - [ ] Make simple home page
-- [ ]  File history
+- [ ] File history (Tree rings)
   - [ ]  diff mode
+- [x] Add post "growth" emoji
 - [x] expand production process
 - [x] Fix pink links in header. Only want to hide header anchor
 

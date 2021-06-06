@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { QueryParamProvider as ContextProvider } from "use-query-params";
 
 import "tailwindcss/tailwind.css";
+import 'tippy.js/dist/tippy.css'; 
 import "../styles/globals.css";
 
 const QueryParamProviderComponent = (props: { children?: React.ReactNode }) => {
