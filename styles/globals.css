@@ -15,12 +15,12 @@ a {
   box-sizing: border-box;
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
+h1 a:not([data-backlink]),
+h2 a:not([data-backlink]),
+h3 a:not([data-backlink]),
+h4 a:not([data-backlink]),
+h5 a:not([data-backlink]),
+h6 a:not([data-backlink]) {
   color: inherit !important;
   text-decoration: none !important;
 }

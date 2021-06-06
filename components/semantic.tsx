@@ -65,6 +65,7 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
         <Link passHref href={props.href}>
           <a
             {...props}
+            data-backlink
             className={makeClass("underline text-pink-500", props.className)}
             ref={setReferenceElement}
             onMouseEnter={() => {

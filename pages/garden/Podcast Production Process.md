@@ -7,43 +7,55 @@ We should automate more of this (well at least publishing).
 
 ## Editing
 
-1. **First Pass:**
+### Video Cuts
 
-   - Make video cuts
-   - Remove long gaps
-   - Set active camera
+It is _crucial_ if your using a multitrack sequence to [[Podcast Editing Organization|organize your podcast]] and want to make a video that you do this step first. During this pass you want to get the general pacing right and set all the cameras. If you don't set the camara first you will have exponentially more clips to set the speaker for, which can be a super time consuming process. Doing it first makes the problem not exist!
 
-2. **Second Pass:**
+**What to look out for:**
 
-   - Hide video
-   - Fix transcript
-   - Fix Grammar
-   - Fix timing issues
+   - Cut content you don't want in the podcast
+   - Remove long gaps between responses
+   - Set active camera (!!!)
 
-   **Timing style guide:**
+### Audio Cuts
+
+I split editing the audio into two parts. If you have an editing partner this is a good place to share some of the workload.
+
+#### Filler Word Removal
+
+Descript has a lot of features that make it easy to remove filler words from you podcast. It is amazing how far removing a few "uh"s can go into making people sound better. Desript has the option to remove all filler words at once. I prefer to go 1 by 1 and leave the filler words that make sense in the transcript. Sometimes the person is using those filler words on purpose to give thier speech character, and it would suck to remove that.
+
+#### Script Audit
+
+This is where all the true editing happen. In this step I will listen to the podcast in full and fix any issues in the automated transcription. This includes correcting the grammer in the automated transcription as well.
+
+**Timing style guide:**
 
    - If people take super long pauses shorten it to `.6-1s`
    - If a sentence starts with a filler word, super repeated word, or a false start I remove it
    - Remove mid sentence filler word if the audio still works
 
-3. Add intro and outro
-4. Add section markers
-5. Break sections that are 8+ minutes into clips for secondary YouTube account
+### Final Polish
+
+This is where your podcast becomes the final product. Here we are just adding polish to make the podcast shine!
+
+- Add intro and outro music/animations
+- Add section markers
+- Break sections that are 8+ minutes into clips for secondary YouTube account
 
 ## Publishing
 
-1. Upload video to YouTube
+1. Upload video to YouTube through Descript
    1. Make YouTube cover image from figma component
    2. Upload subtitles
    3. Add video description with link to devtools.fm/episode/NUMBER
-   4. Add tags
-2. Publish to buzzsprout from descript
+2. Publish to Buzzsprout from Descript
    1. Add show notes
    2. Add short description
    3. Add tags
    4. Add sections
 3. Create devtools.fm post
-   1. Add links
+   1. Add links to YouTube and Buzzsprout
    2. Add title
    3. Add show notes
    4. Add sections

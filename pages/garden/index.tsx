@@ -31,7 +31,7 @@ export default function Garden({ leaves = [] }: GardenProps) {
 
       <Header active="garden" />
 
-      <main className="pb-16">
+      <main className="pb-20 md:pb-32">
         <div
           className="px-6 bg-cover py-8"
           style={{
