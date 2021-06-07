@@ -45,6 +45,12 @@ CleanShot X fixes many of the bad UX decisions the native screen shot tool has.
 - Freeze screen while taking a screenshot
 - Annotate screenshots
 
+### [PixalSnap 2](https://getpixelsnap.com)
+
+As a front end developer I also need to measure things on my screen. 
+There are many browser extensions that do this but a lot of the time I need to measure something not in a browser.
+PixalSnap uses the mac's accessibility APIs to make everything on your screen measurable, even things running in an iOS simulator!
+
 ### [ColorSlurp](https://colorslurp.com)
 
 Another tool Macs come installed with is the `Digital Color Meter`.
