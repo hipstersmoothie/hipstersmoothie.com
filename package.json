@@ -27,6 +27,7 @@
     "rehype-autolink-headings": "^5.1.0",
     "rehype-slug": "^4.0.1",
     "rehype-stringify": "^8.0.0",
+    "remark-emoji": "^2.2.0",
     "remark-wiki-link": "^1.0.2",
     "use-query-params": "^1.2.2"
   },

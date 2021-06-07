@@ -4,22 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "f5afb86a430a0886",
+        "id": "72bf6b9252f790b6",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Podcast Production Process.md",
+            "file": "Terminal Setup.md",
             "mode": "source"
           }
-        }
-      },
-      {
-        "id": "edd4ccddc0d505e8",
-        "type": "leaf",
-        "state": {
-          "type": "graph",
-          "state": {}
         }
       }
     ],
@@ -76,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Podcast Production Process.md",
+                "file": "Terminal Setup.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,17 +86,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f5afb86a430a0886",
+  "active": "72bf6b9252f790b6",
   "lastOpenFiles": [
-    "Podcast Production Process.md",
-    "Podcast Tooling.md",
-    "Podcast Editing Organization.md",
-    "Podcast Social Clips.md",
     "Terminal Setup.md",
-    "devtools.fm.md",
-    "Untitled.md",
-    "Social Clips.md",
+    "Podcast Tooling.md",
+    "Podcast Social Clips.md",
+    "Podcast Production Process.md",
+    "md.md",
+    "JavaScript Monorepo Tooling.md",
+    "Git Aliases.md",
     "Essential Mac Apps.md",
+    "devtools.fm.md",
     "Better Default Tools.md"
   ]
 }

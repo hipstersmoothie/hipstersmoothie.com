@@ -2,6 +2,7 @@ import * as MDXBundler from "mdx-bundler";
 import { wikiLinkPlugin } from "remark-wiki-link";
 import gfm from "remark-gfm";
 import shiki from "rehype-shiki-reloaded";
+import emoji from "remark-emoji";
 import autolinkHeadings from "rehype-autolink-headings";
 import slug from "rehype-slug";
 import visit from "unist-util-visit";
@@ -39,6 +40,7 @@ export const bundleMDX = async (content: string) => {
         ...(options.remarkPlugins ?? []),
         gfm,
         createTags,
+        emoji,
         [
           wikiLinkPlugin,
           {
