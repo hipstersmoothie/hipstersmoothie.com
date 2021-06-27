@@ -34,3 +34,5 @@ In the plugin setting I created a switch. These message can take variables so th
 Once you restart Homebridge you should create a room called "Messages" where your store all of these message switches. This way you wont accidentally press them while navigating your other rooms.
 
 And now you have switches that will send notification when activated :tada:
+
+For a real world use case check out [[Creating "Window Open" Notifications when AC is Running]].
