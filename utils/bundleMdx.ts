@@ -32,12 +32,40 @@ const createTags = () => (tree: any) => {
   visit(tree, "paragraph", visitor);
 };
 
+const OBSIDIAN_IMAGE = /!\[\[(.*)\]\]/;
+
+/** Transform the obsidian image syntax to markdown */
+const obsidianImage = () => (tree: any) => {
+  const visitor = (node: any) => {
+    const { children } = node;
+
+    console.log(children);
+
+    if (
+      children.length >= 1 &&
+      typeof children[0].value === "string" &&
+      children[0].value.match(OBSIDIAN_IMAGE)
+    ) {
+      const [, url] = children[0].value.match(OBSIDIAN_IMAGE);
+      node.children = [
+        {
+          type: "image",
+          url: `/images/${url}`,
+        },
+      ];
+    }
+  };
+
+  visit(tree, "paragraph", visitor);
+};
+
 export const bundleMDX = async (content: string) => {
   const { code } = await MDXBundler.bundleMDX(content, {
     files: {},
     xdmOptions(options) {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
+        obsidianImage,
         gfm,
         createTags,
         emoji,

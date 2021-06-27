@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "yarn create-backlink-map && next build",
     "start": "next start",
-    "create-backlink-map": "node -r esbuild-register scripts/create-backlink-map.ts"
+    "create-backlink-map": "node -r esbuild-register scripts/create-backlink-map.ts",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
@@ -36,7 +37,9 @@
     "@types/body-scroll-lock": "^2.6.1",
     "@types/react": "^17.0.8",
     "autoprefixer": "^10.2.6",
+    "copy-webpack-plugin": "^9.0.1",
     "esbuild-register": "^2.5.0",
+    "patch-package": "^6.4.7",
     "postcss": "^8.3.0",
     "prettier": "^2.3.0",
     "react-command-palette": "^0.16.2",

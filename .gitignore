@@ -34,3 +34,4 @@ yarn-error.log*
 .vercel
 
 pages/garden/back-links.json
+public/images
