@@ -7,8 +7,11 @@
         "id": "8b265015f537045f",
         "type": "leaf",
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "HAUX.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -65,6 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "HAUX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -84,6 +88,7 @@
   },
   "active": "8b265015f537045f",
   "lastOpenFiles": [
+    "HAUX.md",
     "Home Automation.md",
     "Automate your locks without user interaction.md",
     "Creating \"Window Open\" Notificaitons when AC is Running.md",
@@ -92,7 +97,6 @@
     "JavaScript Monorepo Tooling.md",
     "Create Scense That Trigger Notifications.md",
     "Fixing buggy HDMI CEC.md",
-    "Turning Off a When There is No Motion.md",
-    "CleanShot 2021-06-27 at 12.00.52@2x.png"
+    "Turning Off a When There is No Motion.md"
   ]
 }

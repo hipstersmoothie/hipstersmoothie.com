@@ -39,8 +39,6 @@ const obsidianImage = () => (tree: any) => {
   const visitor = (node: any) => {
     const { children } = node;
 
-    console.log(children);
-
     if (
       children.length >= 1 &&
       typeof children[0].value === "string" &&
@@ -73,10 +71,7 @@ export const bundleMDX = async (content: string) => {
           wikiLinkPlugin,
           {
             aliasDivider: "|",
-            pageResolver: (name: string) => {
-              console.log({ name });
-              return [name];
-            },
+            pageResolver: (name: string) => [name],
             hrefTemplate: (link: string) => `/garden/${link}`,
           },
         ],
