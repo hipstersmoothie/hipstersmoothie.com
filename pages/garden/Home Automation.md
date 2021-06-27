@@ -18,13 +18,13 @@ Automating things with code is one of my passions and hobbies, so it's only natu
 
 ## Software
 
-For my home automation system to be sucessful it needs to be able to serve me with all the complex automations I want to create and my girlfriend who just want to control a few things in the house. In other words it must have good [[HAUX]].
+For my home automation system to be successful it needs to be able to serve me with all the complex automations I want to create and my girlfriend who just want to control a few things in the house. In other words it must have good [[HAUX]].
 
-On major drawback of home automation today is the deluge of apps you have to download to control yoru various smart devices. If I have to make my girlfriend download a dozen apps to control everything, my system has failed. 
+On major drawback of home automation today is the deluge of apps you have to download to control your various smart devices. If I have to make my girlfriend download a dozen apps to control everything, my system has failed. 
 
 That's where [HomeKit and Apple's Home App](https://www.apple.com/ios/home/) come in. The Home app provides one simple place where any member of my household can easily control _all_ of the smart devices in the house! And it has automation built in so I can make my house as smart as I want.
 
-The biggest drawback to using HomeKit though is that there's a large chance that not every device you have is compatible. Thankfully the community has filled the void here and an awesome project called [HomeBridge](https://homebridge.io) and all of the plugins community members have made. 
+The biggest drawback to using HomeKit though is that there's a large chance that not every device you have is compatible. Thankfully the community has filled the void here and an awesome project called [Homebridge](https://homebridge.io) and all of the plugins community members have made. 
 
 This app does two things that are vital in my home automation setup:
 

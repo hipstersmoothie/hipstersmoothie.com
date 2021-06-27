@@ -2,7 +2,7 @@
 
 # devtools.fm
 
-A podcast about developer tools and the people who make them. Cohosted with [Justin Bennet](https://twitter.com/Zephraph) With a unique position of knowing and lot of people making developer tools (mostly Justin) we though an interview podcast would produce a lot of interesting content.
+A podcast about developer tools and the people who make them. Co-hosted with [Justin Bennett](https://twitter.com/Zephraph) With a unique position of knowing and lot of people making developer tools (mostly Justin) we though an interview podcast would produce a lot of interesting content.
 
 ## Important Links
 
@@ -13,5 +13,5 @@ A podcast about developer tools and the people who make them. Cohosted with [Jus
 - [Twitter](https://twitter.com/DevtoolsFM)
 - [Instagram](https://www.instagram.com/devtools.fm/)
 - [LinkedIn](https://www.linkedin.com/company/74142607/)
-- [FaceBook](https://www.facebook.com/Devtoolsfm-103295305296154)
+- [Facebook](https://www.facebook.com/Devtoolsfm-103295305296154)
 - [TikTok](https://www.tiktok.com/@devtools.fm)

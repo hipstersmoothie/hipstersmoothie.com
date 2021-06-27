@@ -15,7 +15,7 @@ Before you start you should do a few things:
 
 ### Video Cuts
 
-It is _crucial_ if your using a multi-track sequence to [[Podcast Editing Organization|organize your podcast]] and want to make a video that you do this step first. During this pass you want to get the general pacing right and set all the cameras. If you don't set the camara first you will have exponentially more clips to set the speaker for, which can be a super time consuming process. Doing it first makes the problem not exist!
+It is _crucial_ if your using a multi-track sequence to [[Podcast Editing Organization|organize your podcast]] and want to make a video that you do this step first. During this pass you want to get the general pacing right and set all the cameras. If you don't set the camera first you will have exponentially more clips to set the speaker for, which can be a super time consuming process. Doing it first makes the problem not exist!
 
 **What to look out for:**
 
@@ -29,11 +29,11 @@ I split editing the audio into two parts. If you have an editing partner this is
 
 #### Filler Word Removal
 
-Descript has a lot of features that make it easy to remove filler words from you podcast. It is amazing how far removing a few "uh"s can go into making people sound better. Desript has the option to remove all filler words at once. I prefer to go 1 by 1 and leave the filler words that make sense in the transcript. Sometimes the person is using those filler words on purpose to give thier speech character, and it would suck to remove that.
+Descript has a lot of features that make it easy to remove filler words from you podcast. It is amazing how far removing a few "uh"s can go into making people sound better. Descript has the option to remove all filler words at once. I prefer to go 1 by 1 and leave the filler words that make sense in the transcript. Sometimes the person is using those filler words on purpose to give their speech character, and it would suck to remove that.
 
 #### Script Audit
 
-This is where all the true editing happen. In this step I will listen to the podcast in full and fix any issues in the automated transcription. This includes correcting the grammer in the automated transcription as well.
+This is where all the true editing happen. In this step I will listen to the podcast in full and fix any issues in the automated transcription. This includes correcting the grammar in the automated transcription as well.
 
 **Timing style guide:**
 
@@ -52,7 +52,7 @@ This is where your podcast becomes the final product. Here we are just adding po
 ## Publishing
 
 1. Upload video to YouTube through Descript
-   1. Make YouTube cover image from figma component
+   1. Make YouTube cover image from Figma component
    2. Upload subtitles
    3. Add video description with link to devtools.fm/episode/NUMBER
 2. Publish to Buzzsprout from Descript

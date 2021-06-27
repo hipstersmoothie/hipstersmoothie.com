@@ -45,11 +45,11 @@ CleanShot X fixes many of the bad UX decisions the native screen shot tool has.
 - Freeze screen while taking a screenshot
 - Annotate screenshots
 
-### [PixalSnap 2](https://getpixelsnap.com)
+### [PixelSnap 2](https://getpixelsnap.com)
 
 As a front end developer I also need to measure things on my screen. 
 There are many browser extensions that do this but a lot of the time I need to measure something not in a browser.
-PixalSnap uses the mac's accessibility APIs to make everything on your screen measurable, even things running in an iOS simulator!
+PixelSnap uses the mac's accessibility APIs to make everything on your screen measurable, even things running in an iOS simulator!
 
 ### [ColorSlurp](https://colorslurp.com)
 
@@ -63,13 +63,13 @@ ColorSlurp gets that right and shows you the hex value, and best of all it's fre
 I've been a user for years and have no complaints.
 My pro tips here goes for any editor:
 
-- Learn to use the keybard to navigate you code
+- Learn to use the keyboard to navigate you code
 - Use duplicate cursors whenever you can
 
 ### [Gitup](https://gitup.co)
 
 While I do love my [[Git Aliases]] there is still room for a visual client in my workflow.
-Gitup is where I learned to visualize my git repo as a tree and navigate it with eas.
+Gitup is where I learned to visualize my git repo as a tree and navigate it with ease.
 I'm a big believer in starting git with a visual client like this, it helps so much to be able to see what you actually doing. I tend to use my [[Git Aliases]] for my daily git interactions (add, commit, push) and do everything else in Gitup.
 
 This birds eye view lends a few git operations to feel nicer:

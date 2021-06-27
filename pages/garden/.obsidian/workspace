@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "8b265015f537045f",
+        "id": "dacc11bf365f468d",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Home Automation.md",
+            "file": "HAUX.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Home Automation.md",
+                "file": "HAUX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,17 +86,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "8b265015f537045f",
+  "active": "dacc11bf365f468d",
   "lastOpenFiles": [
-    "Home Automation.md",
     "HAUX.md",
-    "Automate your locks without user interaction.md",
-    "Creating \"Window Open\" Notificaitons when AC is Running.md",
-    "Create Switches That Trigger Notifications.md",
-    "Home Automation Workflows.md",
-    "JavaScript Monorepo Tooling.md",
-    "Create Scense That Trigger Notifications.md",
+    "Git Aliases.md",
+    "Getting Files out of a Docker Container.md",
     "Fixing buggy HDMI CEC.md",
-    "Turning Off a When There is No Motion.md"
+    "Essential Mac Apps.md",
+    "devtools.fm.md",
+    "Creating \"Window Open\" Notifications when AC is Running.md",
+    "Create Switches That Trigger Notifications.md",
+    "Better Default Tools.md",
+    "Automate your locks without user interaction.md"
   ]
 }

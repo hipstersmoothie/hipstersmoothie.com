@@ -2,11 +2,11 @@
 
 HDMI CEC is awesome... when it works. With CEC you can have one device controls multiple connected devices. 
 
-Recently my home theater reciever kicked the bucket, so I went out and bought a [Sony DN-1080](https://www.sony.com/electronics/av-receivers/str-dn1080) which had most of the bigger features I wanted. But one thing it doesn't do well is CEC. My old reciever did it way better:
+Recently my home theater receiver kicked the bucket, so I went out and bought a [Sony DN-1080](https://www.sony.com/electronics/av-receivers/str-dn1080) which had most of the bigger features I wanted. But one thing it doesn't do well is CEC. My old receiver did it way better:
 
 1. Press `Menu` on Apply TV remote
-2. Reciever Turns on
-3. Reciever Turns connected TV on
+2. Receiver Turns on
+3. Receiver Turns connected TV on
 
 Being able to control with with only one remote (or my phone) is 🔑 for me. I considered buying a Sony Bravia TV since the manual said it should work with those TVs, but was unwilling to shell out $2K+ to do it.
 
@@ -14,26 +14,26 @@ Being able to control with with only one remote (or my phone) is 🔑 for me. I 
 
 ### Receiver
 
-One nice thing about the DN-1080 is that it is pretty popular and has a few different homebridge plugins for it. I installed [this one](https://github.com/kovalev-sergey/homebridge-sony-audio#readme)
+One nice thing about the DN-1080 is that it is pretty popular and has a few different Homebridge plugins for it. I installed [this one](https://github.com/kovalev-sergey/homebridge-sony-audio#readme)
 
 ### TV
 
-While there are a few different homebridge plugins that support my TV, there is one huge drawback. When the TV is off it's not connected to wifi, so it can't be controlled! That in itself crushes most automation dreams so I had to find another solution.
+While there are a few different Homebridge plugins that support my TV, there is one huge drawback. When the TV is off it's not connected to wifi, so it can't be controlled! That in itself crushes most automation dreams so I had to find another solution.
 
 Luckily I had a [Harmony Hub](https://www.logitech.com/en-us/products/harmony/harmony-hub.915-000238.html) laying around. This device is an "IR Blaster" which is a fancy term for "universal remote". It can control most devices that have a remote (which works via IR). So with this I can control my TV by sending the `on` and `off` signals and it works no matter what the current state of the TV is.
 
-The hub [has its own homebridge plugin](https://github.com/nicoduj/homebridge-harmony#readme). This plugin exposes "scenes" from the harmony app in the Home app. So I set up a "Watch TV" scene that turned the TV I wanted to control onn and off.
+The hub [has its own Homebridge plugin](https://github.com/nicoduj/homebridge-harmony#readme). This plugin exposes "scenes" from the harmony app in the Home app. So I set up a "Watch TV" scene that turned the TV I wanted to control on and off.
 
 ## Writing the Automation
 
 This automation is relatively simple. All we want to do is sync the state between the two devices.
 
-First create an automation that turns on the TV when the reciver is turned on.
+First create an automation that turns on the TV when the receiver is turned on.
 
 ![[CleanShot 2021-06-27 at 13.07.12@2x.png]]
 
-Then one that turns off the TV when the reciver is turned off.
+Then one that turns off the TV when the receiver is turned off.
 
 ![[CleanShot 2021-06-27 at 13.08.30@2x.png]]
 
-Now whenever I press "Menu" on my Apple TV remote all the necassary devices turn on too :tada:
+Now whenever I press "Menu" on my Apple TV remote all the necessary devices turn on too :tada:

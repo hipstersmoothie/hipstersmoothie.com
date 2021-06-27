@@ -2,8 +2,8 @@
 
 # Podcast Tooling
 
-One thing I didn't antipate when starting the [[devtools.fm]] podcast was the amount of tools I would have to evaluate. 
-While chossing my editor was pretty easy (I work a [Descript](http://descript.com)), all of the other tools I needed were unknown to me.
+One thing I didn't anticipate when starting the [[devtools.fm]] podcast was the amount of tools I would have to evaluate. 
+While choosing my editor was pretty easy (I work a [Descript](http://descript.com)), all of the other tools I needed were unknown to me.
 
 ## Guest Scheduling
 
@@ -12,14 +12,14 @@ How we've solved this is by setting up a [discord server](http://discord.com) th
 
 Once invited we create a channel named "#episode-\{episode description\}".
 We then use [doodle.com](https://doodle.com) to find a time that works for every participant in the episode.
-After we all settle on a time a Google Calendar invite is sent out to all particpants. 
+After we all settle on a time a Google Calendar invite is sent out to all participants. 
 
 ## Recording a Remote Podcast
 
 My co-host and I live on different ends of the country, so a good remote podcasting app is a must.
 Our current podcast recording app we use is [riverside.fm](http://riverside.fm).
 It will record you computers audio and video locally and upload it to riverside.fm as the podcast is recording.
-We had a few hiccups with recording, but after gettign used to it it's gone pretty well.
+We had a few hiccups with recording, but after getting used to it it's gone pretty well.
 
 ## Audio Tools
 
@@ -31,12 +31,12 @@ I use it whenever I'm recording a podcast cause my dogs love to bark!
 
 #### Loopback
 
-This little app enables you to create virtual device out of mutlple sources on your computer.
+This little app enables you to create virtual device out of multiple sources on your computer.
 You can use it to do things like play music in a zoom meeting, but what I use it for is to route audio into Krisp and remove background noise for my guests during post production. [Read all about it here.](https://dev.to/hipstersmoothie/removing-background-noise-from-pre-recorded-audio-2g6i)
 
 ## Editing
 
-I am a huge beliver in dog-fooding.
+I am a huge believer in dog-fooding.
 
 > The use of a newly developed product or service by a company's staff to test it before it is made available to customers.
 
@@ -58,7 +58,7 @@ Since both Justin and I have experience with [Figma](https://figma.com) through 
 ## Podcast Distribution
 
 There are **a lot** of place you can publish a podcast.
-Becuase of the there are also a lot of apps that handle this for you and streamline the process.
+Because of the there are also a lot of apps that handle this for you and streamline the process.
 Instead of uploading your podcast to each platform, you use a service that does that for you.
 
 I surveyed the market and I found that [Buzzsprout](https://buzzsprout.com) was the best bang for my buck and got me on a lot of platforms.
@@ -90,6 +90,6 @@ This is an area we could probably be better in, but it start getting costly.
 Currently we get analytics in a few different ways:
 
 - Video - Just check YouTube play counts
-- Podcast - We use Buzzsprouts built-in analyics
+- Podcast - We use Buzzsprout's built-in analytics
 - Social - Nothing other than manually checking
 - Website - Here we use [plausible](http://plausible.io) so we don't sell you data to google

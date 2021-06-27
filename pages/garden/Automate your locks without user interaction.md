@@ -2,11 +2,11 @@
 
 # Automate your locks without user interaction
 
-When I first installed my [Level](http://level.co) lock and set up the default leave/arrive automation in the Home app I was dissappointed to find out that it still required user interaction.
+When I first installed my [Level](http://level.co) lock and set up the default leave/arrive automation in the Home app I was disappointed to find out that it still required user interaction.
 
 **How it worked:**
 
-1. Leave house wihtout locking door
+1. Leave house without locking door
 2. Drive away
 3. iPhone detects that I left
 4. iPhone sends me notification to confirm that I want to run the "Lock Door Automation"
@@ -52,7 +52,7 @@ As an extra convenience I set up another automation that turns off all the devic
 
 My arrival automations are very similar.
 
-When anyone comes home it sets the "Unloock Door" dummy switch to "on".
+When anyone comes home it sets the "Unlock Door" dummy switch to "on".
 
 ![[CleanShot 2021-06-27 at 12.09.29@2x.png]]
 
@@ -67,7 +67,7 @@ For this automation I wanted:
 - Only run after sunset
 - Only run if the lights aren't already on 
 
-I don't think it's possible to do this directly in the Home app so I resorted to using another app call [Controller](https://controllerforhomekit.com) that enables the full automation abilities of Homekit.
+I don't think it's possible to do this directly in the Home app so I resorted to using another app call [Controller](https://controllerforhomekit.com) that enables the full automation abilities of HomeKit.
 
 ![[CleanShot 2021-06-27 at 12.18.14@2x.png]]
 
