@@ -1,0 +1,36 @@
+#home-automation 
+
+# Create Switches That Trigger Notifications
+
+The automation the HomeKit provides can solves many problems. But there is one huge hole in the system that is complicated to solve: notifications. If you want to create an automation that triggers a notification on your and your housemates devices there is no built in way to do that.
+
+Searching the internet doesn't provide too many good solutiosn either:
+
+- You could control a device (ex: a light) to use as a notification, but that sucks and could easily go unnoticed
+- You could use a push notificatio service, but those cost money and only work if there is an app installed
+- You could use [IFTTT](https://ifttt.com/home) to send your a notifcation, but this also requires their app and only works on one device
+- You could cry, but this doesn't solve your problem either
+
+## Homebridge Messenger
+
+There happens to be a homebridge plugin that solves this to some extent. [Homebridge Messenger](https://github.com/potrudeau/homebridge-messenger) enables you to use various delivery methods for notification (pushcut, email, IFTTT). It will create a switch in the home app that when enabled will send the message to whatever service you configure.
+
+For my current use case I decided to go with IFTTT.
+
+### Setting up IFTTT
+
+In IFTTT I created a "webhook" trigger that describes the thing I'm creating a notification for
+
+![[CleanShot 2021-06-27 at 13.18.18@2x.png]]
+
+When that is triggered it will send a message to my house's [discord](https://discord.com) server that notifies the members of the event.
+
+### Setting up the Plugin
+
+In the plugin setting I created a switch. These message can take variables so that you can re-use the IFTTT for multiple switches
+
+![[CleanShot 2021-06-27 at 13.21.57@2x.png]]
+
+Once you restart homebridge you should create a room called "Messages" where your store all of these message switches. This way you wont accidently press them while navigating your other rooms.
+
+And now you have switches that will send notification when activated :tada:

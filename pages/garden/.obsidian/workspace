@@ -4,14 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f78a2ffc6c45151e",
+        "id": "8b265015f537045f",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Essential Mac Apps.md",
-            "mode": "source"
-          }
+          "type": "graph",
+          "state": {}
         }
       }
     ],
@@ -52,7 +49,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 394
   },
   "right": {
     "id": "917c14c5e0a60115",
@@ -68,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Essential Mac Apps.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,17 +82,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f78a2ffc6c45151e",
+  "active": "8b265015f537045f",
   "lastOpenFiles": [
-    "Essential Mac Apps.md",
-    "Automated Meeting Light.md",
+    "Home Automation.md",
+    "Automate your locks without user interaction.md",
+    "Creating \"Window Open\" Notificaitons when AC is Running.md",
+    "Create Switches That Trigger Notifications.md",
+    "Home Automation Workflows.md",
     "JavaScript Monorepo Tooling.md",
-    "Device Setup /Users/andrewlisowski/Documents/meeting-light/hardware.png.md",
-    "Untitled.md",
-    "Terminal Setup.md",
-    "Podcast Tooling.md",
-    "Podcast Social Clips.md",
-    "Podcast Production Process.md",
-    "md.md"
+    "Create Scense That Trigger Notifications.md",
+    "Fixing buggy HDMI CEC.md",
+    "Turning Off a When There is No Motion.md",
+    "CleanShot 2021-06-27 at 12.00.52@2x.png"
   ]
 }

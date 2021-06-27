@@ -1,0 +1,13 @@
+diff --git a/node_modules/mdast-util-gfm-autolink-literal/from-markdown.js b/node_modules/mdast-util-gfm-autolink-literal/from-markdown.js
+index 8a24bcc..af7e046 100644
+--- a/node_modules/mdast-util-gfm-autolink-literal/from-markdown.js
++++ b/node_modules/mdast-util-gfm-autolink-literal/from-markdown.js
+@@ -94,7 +94,7 @@ function findUrl($0, protocol, domain, path, match) {
+ 
+ function findEmail($0, atext, label, match) {
+   // Not an expected previous character.
+-  if (!previous(match, true) || /[_-]$/.test(label)) {
++  if (!previous(match, true) || /[_-]$/.test(label) || label.endsWith('.png')) {
+     return false
+   }
+ 
