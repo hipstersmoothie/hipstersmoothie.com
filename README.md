@@ -1,5 +1,6 @@
 # Features
 
+- [ ] Add OG meta tags
 - [ ] Add "Watering Can" button (Works like Medium.com claps)
 - [ ] Add analytics to website itself
 - [ ] RSS Feed

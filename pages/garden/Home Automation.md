@@ -4,7 +4,19 @@
 
 Automating things with code is one of my passions and hobbies, so it's only natural that home automation also piques my interest. When making creating your own home automations make sure you have excelled [[HAUX]], or else you're more likely to turn them off.
 
-## Tech Stack
+## Hardware
+
+- **Hub** - [Apple TV 4k](https://www.apple.com/apple-tv-4k/)
+- **Lights** - [Phillips Hue](https://www.philips-hue.com/en-us)
+- **Climate Control** - [ecobee + sensors](https://www.ecobee.com/en-us/)
+- **Security/Sensors** - [Aqara](https://www.aqara.com)
+- **Smoke/Carbon Monoxide Detectors** - [Nest Protect](https://store.google.com/product/nest_protect_2nd_gen?sku=_nest_protect_2nd_gen_wired&hl=en-US)
+- **Speakers** - [HomePod Mini](https://www.apple.com/homepod-mini/)
+- **Lock** - [Level](https://level.co/products/lock)
+- **Doorbell** - [Ring Pro](https://ring.com/products/video-doorbell-pro-2)
+- **Garage** - [iSmartGate Pro](https://www.amazon.com/ISMARTGATE-Gogogate2-Compatible-Controller-Smartphone/dp/B07Q2CTKCY)
+
+## Software
 
 For my home automation system to be sucessful it needs to be able to serve me with all the complex automations I want to create and my girlfriend who just want to control a few things in the house. In other words it must have good [[HAUX]].
 
