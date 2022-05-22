@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Header } from "../components/Header";
-import { components } from "../components/semantic";
+import { Anchor } from "../components/semantic";
 
 function ProjectDescription({
   title,
@@ -80,9 +80,9 @@ export default function Home() {
 
           <ProjectDescription
             title={
-              <components.a href="https://kikbak.tv" className="no-underline">
+              <Anchor href="https://kikbak.tv" className="no-underline">
                 kikbak.tv
-              </components.a>
+              </Anchor>
             }
             description={
               <>
@@ -96,9 +96,9 @@ export default function Home() {
                   experiencing new music through music videos. With the death of
                   MTV finding new music videos as they come out can be daunting.
                   Taking heavy inspriation from{" "}
-                  <components.a href="https://en.wikipedia.org/wiki/We_Are_Hunted">
+                  <Anchor href="https://en.wikipedia.org/wiki/We_Are_Hunted">
                     WeAreHunted.com
-                  </components.a>{" "}
+                  </Anchor>{" "}
                   I created kikbak.tv.
                 </p>
                 <p className="text-xl mb-6">
@@ -124,24 +124,24 @@ export default function Home() {
 
           <ProjectDescription
             title={
-              <components.a
+              <Anchor
                 href="https://github-activity-viewer.vercel.app"
                 className="no-underline"
               >
                 GitHub Activity Viewer
-              </components.a>
+              </Anchor>
             }
             description={
               <>
                 <p className="text-xl mb-6">
                   I really only use 2 social networks:{" "}
-                  <components.a href="https://twitter.com/HipsterSmoothie">
+                  <Anchor href="https://twitter.com/HipsterSmoothie">
                     Twitter
-                  </components.a>
+                  </Anchor>
                   {" and "}
-                  <components.a href="https://github.com/hipstersmoothie">
+                  <Anchor href="https://github.com/hipstersmoothie">
                     GitHub
-                  </components.a>
+                  </Anchor>
                   . I discover lots of cool things on twitter from the people I
                   follow and wanted to have the same experience on GitHub.
                 </p>
@@ -173,22 +173,20 @@ export default function Home() {
 
           <ProjectDescription
             title={
-              <components.a
+              <Anchor
                 href="https://www.pitchforkify.com/"
                 className="no-underline"
               >
                 Pitchforkify
-              </components.a>
+              </Anchor>
             }
             description={
               <>
                 <p className="text-xl mb-6">
                   One of my favorite place to read about music news that has
                   stayed with me through the years is{" "}
-                  <components.a href="https://www.pitchfork.com/">
-                    Pitchfork
-                  </components.a>
-                  . Pitchfork has been around for decades reviewing 2-4 albums a
+                  <Anchor href="https://www.pitchfork.com/">Pitchfork</Anchor>.
+                  Pitchfork has been around for decades reviewing 2-4 albums a
                   day. While the reviews can be quite critical, they are
                   entertaining and offer a guide to consuming lots of music you
                   might not have heard of otherwise. Unfortunately their
