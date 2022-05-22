@@ -66,14 +66,16 @@ export default function Home() {
           <h2 className="text-4xl font-semibold mb-8">Projects</h2>
           <p className="text-xl mb-6">
             While I'd like to say that I've meade heaps of money off all my side
-            projects, that very much isn't the case. My project usually center
+            projects, that very much isn't the case. My projects usually center
             around creating an experience for an existing website or source of
             data that fits my needs.
           </p>
           <p className="text-xl">
             The following list is by no means a comprehensive list of all the
             side projects I've worked on. This list compromises the tools that
-            have withstood the test of time (for me).
+            have withstood the test of time (for me) and I use them almost
+            daily. The coolest thing about be a programmer to me is that I can
+            creates things like this just for me. Make the web your own!
           </p>
 
           <ProjectDescription
