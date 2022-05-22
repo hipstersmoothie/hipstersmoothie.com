@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { BookOpen, Link as LinkIcon } from "react-feather";
 
 import { PlantHealth } from "../../components/PlantHealth";
 import { Time } from "../../components/Time";
@@ -14,8 +15,6 @@ import {
 } from "../../components/semantic";
 import { getLeaves, LeafObject } from "../../utils/leaves";
 import { PlantIcon } from "../../components/icons/PlantIcon";
-import { NotebookIcon } from "../../components/icons/NotebookIcon";
-import { LinkIcon } from "../../components/icons/LinkIcon";
 
 interface GardenProps {
   leaves: LeafObject[];
@@ -93,8 +92,8 @@ export default function Garden({ leaves = [] }: GardenProps) {
               className="grid gap-6 my-8 items-center"
               style={{ gridTemplateColumns: "40px auto" }}
             >
-              <div className="rounded-xl bg-pink-500 h-[45px] w-[45px] flex items-center justify-center self-start">
-                <LinkIcon height={20} width={20} fill="white" />
+              <div className="rounded-sm bg-pink-500 h-[45px] text-white w-[45px] flex items-center justify-center self-start">
+                <LinkIcon height={20} width={20} />
               </div>
               <span className="md:text-lg">
                 Click on the{" "}
@@ -104,8 +103,8 @@ export default function Garden({ leaves = [] }: GardenProps) {
                 each each note. These links only link to other notes in my
                 Digital Garden.
               </span>
-              <div className="rounded-xl bg-pink-500 h-[45px] w-[45px] flex items-center justify-center self-start">
-                <NotebookIcon height={22} width={22} fill="white" />
+              <div className="rounded-sm bg-pink-500 text-white h-[45px] w-[45px] flex items-center justify-center self-start">
+                <BookOpen height={22} width={22} />
               </div>
               <span className="md:text-lg">
                 Use the Note Switcher{" "}
@@ -123,7 +122,7 @@ export default function Garden({ leaves = [] }: GardenProps) {
                 href={`/garden/${leaf.title}`}
                 key={`/garden/${leaf.title}`}
               >
-                <a className="border rounded-lg px-6 py-5 shadow-none transition-shadow hover:shadow-lg hover:border-gray-400 active:shadow">
+                <a className="border rounded-sm px-6 py-5 shadow-none transition-shadow hover:shadow-lg hover:border-gray-400 active:shadow">
                   <div className="flex justify-between space-x-4">
                     <h2 className="text-lg mb-2">{leaf.title}</h2>
                     <PlantHealth leaf={leaf} />

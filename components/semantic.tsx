@@ -92,7 +92,7 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
             style={styles.popper}
             onMouseOver={() => clearTimeout(hideTimeout.current)}
             onMouseOut={hidePopperDelayed}
-            className="bg-white border rounded-xl w-[400px] h-[400px] shadow-xl"
+            className="bg-white border rounded-sm w-[400px] h-[400px] shadow-xl"
             {...attributes.popper}
             src={`${window.location.origin}${props.href}?in-iframe=true`}
           />
@@ -106,7 +106,11 @@ export const Anchor = (props: React.ComponentProps<"a">) => {
       {...props}
       target={props["data-heading"] ? "_self" : "_blank"}
       rel="noopener"
-      className="underline text-blue-500"
+      className={makeClass(
+        "text-blue-500",
+        props.className,
+        !props.className?.includes("underline") && "underline"
+      )}
     />
   );
 };
@@ -146,8 +150,8 @@ export const Blockquote: React.FC<BlockquoteProps> = ({
       className={makeClass("-m-2 my-6 grid", className)}
       style={{ gridTemplateColumns: "8px auto" }}
     >
-      <div className="rounded rounded-r-none bg-pink-500" />
-      <div className="rounded-lg rounded-l-none bg-white border-2 border-l-0 px-4">
+      <div className="rounded-sm rounded-r-none bg-pink-500" />
+      <div className="rounded-sm rounded-l-none bg-white border-2 border-l-0 border-gray-100 px-4">
         <blockquote children={children} />
         {author && (
           <figcaption className="-mt-2 mb-6 text-right text-[1.05rem] text-gray-600 font-semibold">
@@ -178,7 +182,7 @@ export const Tag = (props: React.ComponentProps<"button">) => {
   return (
     <button
       {...props}
-      className="bg-pink-400 rounded-full inline-flex px-3 text-white font-semibold mr-2 last:mr-0 focus:outline-none"
+      className="bg-pink-400 rounded-md inline-flex px-3 text-white font-semibold mr-2 last:mr-0 focus:outline-none"
       onClick={() => setSearch(props.children as string)}
     />
   );
@@ -239,7 +243,7 @@ export const components: ComponentMap = {
   blockquote: Blockquote,
   img: (props) => (
     <figure className="my-12">
-      <img {...props} className="rounded-xl mx-auto w-full md:w-9/12" />
+      <img {...props} className="rounded-sm mx-auto w-full md:w-9/12" />
       <figcaption className="text-sm font-medium my-2 text-center italic">
         {(props as any).alt}
       </figcaption>

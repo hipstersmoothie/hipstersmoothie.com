@@ -74,11 +74,11 @@ export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
         hotKeys="command+k"
         onAfterOpen={() => {
           // Safari Hack: If the user presses escape immediately after
-          // opening the note switcher it will scroll to the bottom of 
-          // the page. This code simulates user interaction and fixes 
+          // opening the note switcher it will scroll to the bottom of
+          // the page. This code simulates user interaction and fixes
           // the scroll issue.
-          (document.activeElement as any).value = ' ';
-          (document.activeElement as any).value = '';
+          (document.activeElement as any).value = " ";
+          (document.activeElement as any).value = "";
           disableBodyScroll(paletteWrapper.current);
         }}
         onRequestClose={onClose}
@@ -94,14 +94,14 @@ export const NoteSwitcher = ({ leaves }: NoteSwitcherProps) => {
         trigger={<div />}
         theme={{
           modal:
-            "command-modal absolute bg-white w-[90vw] md:w-[605px] top-[10%] left-1/2 p-6 rounded-lg transform -translate-x-2/4 shadow-lg",
+            "command-modal absolute bg-white w-[90vw] md:w-[605px] top-[10%] left-1/2 p-6 rounded-sm transform -translate-x-2/4 shadow-lg",
           overlay: "atom-overlay",
           header: "color-gray-900",
           input:
             "w-full bg-gray-100 border border-gray-300 p-2 rounded text-[14px]",
           inputFocused: "border-gray-400 focus:bg-white outline-none",
           suggestionsContainer:
-            "command-list overflow-auto rounded-lg border border-gray-200 mt-4",
+            "command-list overflow-auto rounded-sm border border-gray-200 mt-4",
           suggestion:
             "text-gray-900 py-4 px-3 text-[1rem] font-medium border-b border-gray-200 last:border-none",
           suggestionHighlighted: "bg-gray-200 !text-black",

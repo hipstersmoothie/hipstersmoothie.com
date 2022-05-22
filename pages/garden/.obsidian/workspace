@@ -1,15 +1,15 @@
 {
   "main": {
-    "id": "91c8b948fb76fcc7",
+    "id": "eb8321b3878b3ca1",
     "type": "split",
     "children": [
       {
-        "id": "dacc11bf365f468d",
+        "id": "dfa31a56e1cadf79",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Create Switches That Trigger Notifications.md",
+            "file": "Importing Local Database into Planetscale.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Create Switches That Trigger Notifications.md",
+                "file": "Importing Local Database into Planetscale.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,17 +86,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "dacc11bf365f468d",
+  "active": "dfa31a56e1cadf79",
   "lastOpenFiles": [
-    "Create Switches That Trigger Notifications.md",
-    "Home Automation Workflows.md",
-    "HAUX.md",
-    "Git Aliases.md",
-    "Getting Files out of a Docker Container.md",
-    "Fixing buggy HDMI CEC.md",
-    "Essential Mac Apps.md",
-    "devtools.fm.md",
-    "Creating \"Window Open\" Notifications when AC is Running.md",
-    "Better Default Tools.md"
+    "Importing Local Database into Planetscale.md",
+    "public/CleanShot 2021-06-27 at 12.45.44@2x.png",
+    "public/CleanShot 2021-06-27 at 12.47.47@2x.png",
+    "public/CleanShot 2021-06-27 at 12.49.04@2x.png",
+    "public/CleanShot 2021-06-27 at 12.50.55@2x.png",
+    "public/CleanShot 2021-06-27 at 13.07.12@2x.png",
+    "public/CleanShot 2021-06-27 at 13.08.30@2x.png",
+    "public/CleanShot 2021-06-27 at 13.18.18@2x.png",
+    "public/CleanShot 2021-06-27 at 13.19.22@2x.png",
+    "public/CleanShot 2021-06-27 at 13.21.57@2x.png"
   ]
 }
