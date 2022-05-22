@@ -34,7 +34,7 @@ Now you need to configure a few things in your `mysql` server to make it availab
 
 Run the following commands while connected:
 
-```mysql
+```sh
 SET @@GLOBAL.ENFORCE_GTID_CONSISTENCY = WARN;
 SET @@GLOBAL.ENFORCE_GTID_CONSISTENCY = ON;
 SET @@GLOBAL.GTID_MODE = OFF_PERMISSIVE;
@@ -44,7 +44,7 @@ SHOW STATUS LIKE 'ONGOING_ANONYMOUS_TRANSACTION_COUNT';
 
 When the last command displays a `0` in the output run this command
 
-```mysql
+```sh
 SET @@GLOBAL.GTID_MODE = ON;
 ```
 
@@ -54,7 +54,7 @@ Use the the url and port displayed by `ngrok`.
 
 ![[CleanShot 2021-11-21 at 23.02.07@2x.png]]
 
-Then fill in your credentials and click `Test connection`. Hopefully this works! 
+Then fill in your credentials and click `Test connection`. Hopefully this works!
 On the next screen just click `Enable Primary Mode` and `Finish Import` to complete the process.
 
 ## Done!
