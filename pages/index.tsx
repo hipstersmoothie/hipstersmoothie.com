@@ -62,6 +62,41 @@ function Repository({
   );
 }
 
+function Episode({
+  id,
+  title,
+  episode,
+  date,
+}: {
+  id: string;
+  title: string;
+  episode: number;
+  date: string;
+}) {
+  return (
+    <a
+      className="grid grid-cols-[1fr 2fr] gap-4 py-4 items-center episodes_row__2WE_x"
+      href={`https://www.youtube.com/watch?v=${id}`}
+    >
+      <div className="w-full h-[fit-content]">
+        <img
+          className="w-full max-w-64 rounded-sm h-full"
+          src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`}
+        />
+      </div>
+      <div className="flex justify-between flex-col gap-2">
+        <div className="text-lg md:text-xl  font-bold ">{title}</div>
+        <div className="flex items-center space-x-4">
+          <span className="font-semibold text-sm md:text-md">
+            Episode #{episode}
+          </span>
+          <div className="text-xs">({date})</div>
+        </div>
+      </div>
+    </a>
+  );
+}
+
 export default function Home() {
   return (
     <div>
@@ -94,6 +129,91 @@ export default function Home() {
                 objectFit="contain"
               />
             </div>
+          </div>
+        </div>
+
+        <div className="w-[100vw] bg-pink-200 text-pink-900">
+          <div className="max-w-[120ch] px-6 md:px-10 pt-12 md:py-12 mt-12 m-auto">
+            <h2 className="text-4xl font-semibold mb-8">devtools.fm</h2>
+
+            <p className="text-xl mb-6">
+              I publish a podcast weekly with{" "}
+              <Anchor href="https://twitter.com/Zephraph">Justin Bennet</Anchor>
+              . It's dubbed "A podcast about developer tools and the people who
+              make them." We talk to prominent (and not so prominent) developers
+              who make tools for developers.
+            </p>
+
+            <p className="text-xl">
+              This podcast was originally started as a dog fooding exercise for
+              my job at Descript, but quickly morphed into something I really
+              enjoy doing. It forces me to research new and interesting topics
+              and expand my knowledge about development as a whole. If you want
+              to be on it reach out on Twitter!
+            </p>
+          </div>
+        </div>
+
+        <div className="max-w-[120ch] px-6 md:px-10 py-6 md:py-10 m-auto">
+          <h3 className="text-3xl font-semibold mb-8 border-b pb-2 mt-10 my-8">
+            Notable Episodes
+          </h3>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 items-start">
+            <Episode
+              id="_j0krlX632Q"
+              date="7/16/2021"
+              episode={9}
+              title="Jason Laster - replay.io"
+            />
+            <Episode
+              id="ycuYlzuBqcA"
+              date="8/27/2021"
+              episode={12}
+              title="Evan You - Vue, Vite"
+            />
+            <Episode
+              id="1i9Wm7dP1Aw"
+              date="9/23/2021"
+              episode={14}
+              title="Fred K. Schott - Snowpack, Astro"
+            />
+            <Episode
+              id="3zn3Lyys9Zk"
+              date="11/4/2021"
+              episode={17}
+              title="Pedro Duarte - Modulz, Radix, Stitches"
+            />
+            <Episode
+              id="xI-OggjrKLg"
+              date="12/3/2021"
+              episode={19}
+              title="Michael Jackson - react-router, Remix, unpkg"
+            />
+            <Episode
+              id="_Irg0CcadzQ"
+              date="2/3/2022"
+              episode={23}
+              title="Steve Ruiz - tldraw"
+            />
+            <Episode
+              id="ADTcMPZrd6I"
+              date="3/17/2022"
+              episode={26}
+              title="Brian LeRoux - arc.codes, begin.com"
+            />
+            <Episode
+              id="pZixOZENq7Y"
+              date="4/14/2022"
+              episode={28}
+              title="Steve Sewell - Builder.io, partytown, Qwik, mitosis"
+            />
+            <Episode
+              id="XpeD4FtlMg4"
+              date="5/12/2022"
+              episode={30}
+              title="Zack Jackson - Module Federation"
+            />
           </div>
         </div>
 
