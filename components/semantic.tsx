@@ -227,6 +227,34 @@ export const H1 = (props: React.ComponentProps<"h1">) => {
   );
 };
 
+export const Code = (props: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  if ("className" in props) {
+    if (props.className.startsWith("language-")) {
+      return (
+        <code
+          {...props}
+          className={makeClass(
+            props.className,
+            "text-gray-600 rounded block py-8 px-6 overflow-auto"
+          )}
+        />
+      );
+    }
+
+    return <code {...props} />;
+  }
+
+  return (
+    <code
+      {...props}
+      className="text-xs rounded px-2 py-1 bg-gray-200 text-gray-900"
+    />
+  );
+};
+
 const onHeadingClick = (e: React.MouseEvent<HTMLHeadingElement>) => {
   // Update the location hash without scrolling
   history.replaceState(null, null, `#${e.currentTarget.id}`);
@@ -255,30 +283,7 @@ export const components: ComponentMap = {
   pre: (props) => (
     <pre {...props} className="bg-gray-200 rounded border my-6" />
   ),
-  code: (props: { children: React.ReactNode; className?: string }) => {
-    if ("className" in props) {
-      if (props.className.startsWith("language-")) {
-        return (
-          <code
-            {...props}
-            className={makeClass(
-              props.className,
-              "text-gray-600 rounded block py-8 px-6 overflow-auto"
-            )}
-          />
-        );
-      }
-
-      return <code {...props} />;
-    }
-
-    return (
-      <code
-        {...props}
-        className="text-xs rounded px-2 py-1 bg-gray-200 text-gray-900"
-      />
-    );
-  },
+  code: Code,
   h1: H1,
   h2: (props: React.ComponentProps<"h2">) => (
     <h2

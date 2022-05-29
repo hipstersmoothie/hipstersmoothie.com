@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Header } from "../components/Header";
-import { Anchor } from "../components/semantic";
+import { Anchor, Code } from "../components/semantic";
+import { Star } from "react-feather";
 
 function ProjectDescription({
   title,
@@ -24,6 +25,40 @@ function ProjectDescription({
         </div>
       </div>
     </>
+  );
+}
+
+function Repository({
+  slug,
+  name = slug,
+  description,
+  language,
+  stars,
+}: {
+  slug: string;
+  name?: string;
+  description: React.ReactNode;
+  language: string;
+  stars: string;
+}) {
+  return (
+    <a
+      className="flex gap-2 flex-col items-start  rounded-sm border border-gray-300 p-5"
+      href={`https://github.com/${slug}`}
+    >
+      <Code>{name || slug}</Code>
+      <p className="px-1">{description}</p>
+      <div className="flex gap-4">
+        <div className="flex gap-1 items-center text-gray-500 text-sm">
+          <div className={`w-3 h-3 bg-blue-500 rounded-full`} />
+          <span>{language}</span>
+        </div>
+        <div className="flex gap-1 items-center text-gray-500 text-sm">
+          <Star className="w-4 h-4" />
+          <span>{stars}</span>
+        </div>
+      </div>
+    </a>
   );
 }
 
@@ -62,22 +97,28 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-[120ch] px-6 md:px-10 py-12 md:py-20 m-auto">
-          <h2 className="text-4xl font-semibold mb-8">Projects</h2>
-          <p className="text-xl mb-6">
-            While I'd like to say that I've meade heaps of money off all my side
-            projects, that very much isn't the case. My projects usually center
-            around creating an experience for an existing website or source of
-            data that fits my needs.
-          </p>
-          <p className="text-xl">
-            The following list is by no means a comprehensive list of all the
-            side projects I've worked on. This list compromises the tools that
-            have withstood the test of time (for me) and I use them almost
-            daily. The coolest thing about be a programmer to me is that I can
-            creates things like this just for me. Make the web your own!
-          </p>
+        <div className="w-[100vw] bg-pink-200 text-pink-900">
+          <div className="max-w-[120ch] px-6 md:px-10 pt-12 md:py-12 mt-12 m-auto">
+            <h2 className="text-4xl font-semibold mb-8">Projects</h2>
 
+            <p className="text-xl mb-6">
+              While I'd like to say that I've meade heaps of money off all my
+              side projects, that very much isn't the case. My projects usually
+              center around creating an experience for an existing website or
+              source of data that fits my needs.
+            </p>
+
+            <p className="text-xl">
+              The following list is by no means a comprehensive list of all the
+              side projects I've worked on. This list compromises the tools that
+              have withstood the test of time (for me) and I use them almost
+              daily. The coolest thing about be a programmer to me is that I can
+              creates things like this just for me. Make the web your own!
+            </p>
+          </div>
+        </div>
+
+        <div className="max-w-[120ch] px-6 md:px-10 py-6 md:py-10 m-auto">
           <ProjectDescription
             title={
               <Anchor href="https://kikbak.tv" className="no-underline">
@@ -222,6 +263,84 @@ export default function Home() {
                 alt="A screenshot of the github activity viewer"
               />
             }
+          />
+        </div>
+
+        <div className="w-[100vw] bg-pink-200 text-pink-900">
+          <div className="max-w-[120ch] px-6 md:px-10 pt-12 md:py-12 mt-12 m-auto">
+            <h2 className="text-4xl font-semibold mb-8">Open Source</h2>
+
+            <p className="text-xl mb-6">
+              I'm a big fan of open source software. I love being able to crack
+              open a repo and decipher how a library does it's magic. I'm always
+              amazed at how much awesome code is open source and freely
+              available to use. While I might not be the most active maintainer
+              (active open source maintenance is a young man's game!), I do have
+              a few packages that I maintain.
+            </p>
+
+            <p className="text-xl">
+              I make lots of tiny plugins for all the tools I use. The following
+              aren't all my packages, but the ones I'm most proud of!
+            </p>
+          </div>
+        </div>
+
+        <div className="max-w-[120ch] px-6 md:px-10 py-6 md:py-10 m-auto grid grid-cols-2 gap-4">
+          <Repository
+            slug="intuit/auto"
+            description="Generate releases based on semantic version labels on pull
+              requests."
+            language="TypeScript"
+            stars="1.7k"
+          />
+          <Repository
+            slug="hipstersmoothie/storybook-dark-mode"
+            name="storybook-dark-mode"
+            description="A storybook addon that lets your users toggle between dark and light mode."
+            language="TypeScript"
+            stars="309"
+          />
+          <Repository
+            slug="intuit/design-systems-cli"
+            description="A CLI toolbox for creating design systems."
+            language="TypeScript"
+            stars="337"
+          />
+          <Repository
+            slug="hipstersmoothie/storybook-addon-react-docgen"
+            name="storybook-addon-react-docgen"
+            description="A storybook addon to display react docgen info."
+            language="TypeScript"
+            stars="82"
+          />
+          <Repository
+            slug="hipstersmoothie/react-docgen-typescript-plugin"
+            name="react-docgen-typescript-plugin"
+            description="A webpack plugin to inject react typescript docgen information"
+            language="TypeScript"
+            stars="39"
+          />
+          <Repository
+            slug="hipstersmoothie/bmp-ts"
+            name="bmp-ts"
+            description="A pure typescript bmp encoder and decoder"
+            language="TypeScript"
+            stars="6"
+          />
+          <Repository
+            slug="hipstersmoothie/rehype-shiki-reloaded"
+            name="rehype-shiki-reloaded"
+            description="A rehype plugin for syntax highlighting using shiki that supports dark mode."
+            language="TypeScript"
+            stars="3"
+          />
+          <Repository
+            slug="hipstersmoothie/react-glider"
+            name="react-glider"
+            description="A react wrapper for glider.js"
+            language="TypeScript"
+            stars="121"
           />
         </div>
       </main>
